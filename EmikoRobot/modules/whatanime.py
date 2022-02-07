@@ -31,7 +31,7 @@ async def whatanime(e):
         return
     ig = is_gif(media) or is_video(media)
     if not is_image(media) and not ig:
-        await e.reply("`Media must be an image or gif or video`")
+        await e.reply("`That's not how it works dude! Please reply it to a Photo or Gif or Video to see the results. Results might not be accurate though.`")
         return
     filename = "file.jpg"
     if not ig and isinstance(media, MessageMediaDocument):
@@ -96,3 +96,18 @@ def is_gif(file):
     if not is_video(file):
         return False
     return DocumentAttributeAnimated() in getattr(file, "document", file).attributes
+
+
+__help__ = """
+✧ /whatanime or /sauce :- Please reply to a Gif or Photo or Video,
+
+You saw a good anime video, photo, gif but dont know what is that anime's name?
+This is where whatanime comes in, just reply to that media with /whatanime and it will search the anime name for you from anilist.
+"""
+__mod_name__ = "WhatAnime"
+
+WA_HANDLER = DisableAbleCommandHandler(
+    ["whatanime", "sauce"], whatanime, pass_args=True, admin_ok=True
+)
+
+dispatcher.add_handler(WA_HANDLER)
