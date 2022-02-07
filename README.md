@@ -1,9 +1,9 @@
-<p align="center">
-  # Destiny Robot
+
+# Destiny Robot
 ![Unmei (Destiny)](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg)
 # Unmei Destiny
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/729d680436084e0a9cb16f0e875dc097)](https://www.codacy.com/gh/DarkSoulxUltra/Destiny-Bot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DarkSoulxUltra/Destiny-Bot&amp;utm_campaign=Badge_Grade_Settings)[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/DarkSoulxUltra/Destiny-Bot/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![Updates channel!](https://img.shields.io/badge/Join%20Channel-!-red)](https://t.me/unmei_updates)
-</p>
+
 
 <h4><p align="center"> Unmei Bot </p></h4>
 
