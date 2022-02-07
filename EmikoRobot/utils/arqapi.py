@@ -14,8 +14,8 @@ from search_engine_parser import GoogleSearch
 from EmikoRobot import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
 from EmikoRobot import pbot
 
-ARQ_API = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
-ARQ_API_KEY = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
+ARQ_API = "HYSKMG-VATBRH-KDHVEF-QHXPZM-ARQ"
+ARQ_API_KEY = "HYSKMG-VATBRH-KDHVEF-QHXPZM-ARQ"
 SUDOERS = OWNER_ID
 ARQ_API_URL = "https://thearq.tech"
 
