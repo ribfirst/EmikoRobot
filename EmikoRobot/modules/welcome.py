@@ -198,19 +198,19 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    f"Welcome to {html.escape(chat.title)} my king.", reply_to_message_id=reply
+                    f"My Maestro just arrived in {html.escape(chat.title)}. Okairinasai, Maestro!!!.", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"My King just joined the chat"
+                    f"Maestro just joined the chat"
                 )
                 continue
 
             # Welcome Devs
             if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! The Prince just joined!",
+                    "A conductor has joined the group! Be prepared!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -218,7 +218,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Sudos
             if new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Huh! Emperor just joined! Stay Alert!",
+                    "Whoa! a Musicart just joined the group! Stay alert!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -226,7 +226,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Support
             if new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh! Someone with Captain just joined!",
+                    "A D2 Slayer just joined! D2's, be aware!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -234,7 +234,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome WOLVES
             if new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Oof! A Soldier Users just joined!", reply_to_message_id=reply
+                    "A Melody Creator joined! Some people says Musicarts can make even D2s to dance!", reply_to_message_id=reply
                 )
                 continue
 
@@ -610,14 +610,14 @@ def left_member(update: Update, context: CallbackContext):  # sourcery no-metric
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Sorry to see you leave :(", reply_to_message_id=reply
+                    "Maestro!! Please don't leave me alone.. :(", reply_to_message_id=reply
                 )
                 return
 
             # Give the devs a special goodbye
             if left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at the Eagle Union!",
+                    "See you later Aligator! OOPS, I meant Conductor*",
                     reply_to_message_id=reply,
                 )
                 return
@@ -725,18 +725,18 @@ def welcome(update: Update, context: CallbackContext):
         if args[0].lower() in ("on", "yes"):
             sql.set_welc_preference(str(chat.id), True)
             update.effective_message.reply_text(
-                "Okay! I'll greet members when they join."
+                "Okay! I'll greet members as you say whenever they join."
             )
 
         elif args[0].lower() in ("off", "no"):
             sql.set_welc_preference(str(chat.id), False)
             update.effective_message.reply_text(
-                "I'll go loaf around and not welcome anyone then."
+                "Fine!!! I won't welcome anyone.."
             )
 
         else:
             update.effective_message.reply_text(
-                "I understand 'on/yes' or 'off/no' only!"
+                "Duh!!!  I understand 'on/yes' or 'off/no' only!"
             )
 
 
@@ -885,7 +885,7 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
     if len(args) >= 1:
         if args[0].lower() in ("off", "no"):
             sql.set_welcome_mutes(chat.id, False)
-            msg.reply_text("I will no longer mute people on joining!")
+            msg.reply_text("Okay... Fine! I will allow them to write after they join.")
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"#WELCOME_MUTE\n"
@@ -906,7 +906,7 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
         if args[0].lower() in ["strong"]:
             sql.set_welcome_mutes(chat.id, "strong")
             msg.reply_text(
-                "I will now mute people when they join until they prove they're not a bot.\nThey will have 120seconds before they get kicked."
+                "Evil Mode On!!! I am gonna mute people when they join, Hahaha!! They have to prove they're not a bot.\nThey will have just 120 seconds before they get kicked from here."
             )
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
