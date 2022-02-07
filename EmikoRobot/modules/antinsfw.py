@@ -83,7 +83,7 @@ async def detect_nsfw(_, message):
         f"""
 **NSFW Image Detected & Deleted Successfully!
 ————————————————————**
-**User:** {message.from_user.mention} [`{message.from_user.id}`]
+**Horny User:** {message.from_user.mention} [`{message.from_user.id}`]
 **Safe:** `{results.neutral} %`
 **Porn:** `{results.porn} %`
 **Adult:** `{results.sexy} %`
@@ -152,10 +152,10 @@ async def nsfw_enable_disable(_, message):
     if status == "on" or status == "yes":
         await nsfw_on(chat_id)
         await message.reply_text(
-            "Enabled AntiNSFW System. I will Delete Messages Containing Inappropriate Content."
+            "Enabled AntiNSFW System. I will Delete inappropraite media from Horny peoples."
         )
     elif status == "off" or status == "no":
         await nsfw_off(chat_id)
-        await message.reply_text("Disabled AntiNSFW System.")
+        await message.reply_text("Disabled AntiNSFW System. Yeah, enjoy your fap now.")
     else:
         await message.reply_text("Unknown Suffix, Use /antinsfw [on/off]")
