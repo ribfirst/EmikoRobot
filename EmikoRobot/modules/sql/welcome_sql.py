@@ -11,7 +11,7 @@ from sqlalchemy.sql.sqltypes import BigInteger
 DEFAULT_WELCOME_MESSAGES = [
     "{first} is here!",  # Discord welcome messages copied
     "Ready player {first}",
-    "Genos, {first} is here.",
+    "Armin, {first} is here.",
     "A wild {first} appeared.",
     "{first} came in like a Lion!",
     "{first} has joined your party.",
@@ -34,7 +34,7 @@ DEFAULT_WELCOME_MESSAGES = [
     "{first} just showed up. Hold my beer.",
     "Challenger approaching! {first} has appeared!",
     "It's a bird! It's a plane! Nevermind, it's just {first}.",
-    r"It's {first}! Praise the sun! \o/",
+    "It's {first}! Praise the sun! \o/",
     "Never gonna give {first} up. Never gonna let {first} down.",
     "Ha! {first} has joined! You activated my trap card!",
     "Hey! Listen! {first} has joined!",
@@ -52,7 +52,7 @@ DEFAULT_WELCOME_MESSAGES = [
     "It's a bird! It's a plane! - Nope, its {first}!",
     "{first} Joined! - Ok.",  # Discord welcome messages end.
     "All Hail {first}!",
-    "Hi, {first}. Don't lurk, only Villans do that.",
+    "Hi, {first}. Don't lurk, only Titans do that.",
     "{first} has joined the battle bus.",
     "A new Challenger enters!",  # Tekken
     "Ok!",
@@ -60,12 +60,11 @@ DEFAULT_WELCOME_MESSAGES = [
     "Something just fell from the sky! - oh, its {first}.",
     "{first} Just teleported into the chat!",
     "Hi, {first}, show me your Hunter License!",  # Hunter Hunter
-    "I'm looking for Garo, oh wait nvm it's {first}.",  # One Punch man s2
+    "I'm looking for Levi, oh wait nvm it's {first}.",  # One Punch man s2
     "Welcome {first}, leaving is not an option!",
     "Run Forest! ..I mean...{first}.",
-    "{first} do 100 push-ups, 100 sit-ups, 100 squats, and 10km running EVERY SINGLE DAY!!!",  # One Punch ma
-    "Huh?\nDid someone with a disaster level just join?\nOh wait, it's just {first}.",  # One Punch ma
-    "Hey, {first}, ever heard the King Engine?",  # One Punch ma
+    "Huh?\nDid someone with a Disaster level just join?\nOh wait, it's just {first}.",  # One Punch ma
+    "Hey, {first}, ever heard the Titan Engine?",  # One Punch ma
     "Hey, {first}, empty your pockets.",
     "Hey, {first}!, are you strong?",
     "Call the Avengers! - {first} just joined the chat.",
@@ -149,15 +148,23 @@ DEFAULT_WELCOME_MESSAGES = [
     "In the jungle, you must wait...until the dice read five or eight.",  # Jumanji stuff
     "Dr.{first} Famed archeologist and international explorer,\nWelcome to Jumanji!\nJumanji's Fate is up to you now.",
     "{first}, this will not be an easy mission - monkeys slow the expedition.",  # End of Jumanji stuff
-    "Remember, remember, the Fifth of November, the Gunpowder Treason and Plot. I know of no reason why the Gunpowder Treason should ever be forgot.",  # V for Vendetta
-    "The only verdict is vengeance; a vendetta, held as a votive not in vain, for the value and veracity of such shall one day vindicate the vigilant and the virtuous.",  # V for Vendetta
-    "Behind {first} there is more than just flesh. Beneath this user there is an idea... and ideas are bulletproof.",  # V for Vendetta
-    "Love your rage, not your cage.",  # V for Vendetta
-    "Get your stinking paws off me, you damned dirty ape!",  # Planet of the apes
+    "Remember, remember, the Fifth of November, the Gunpowder Treason and Plot. I know of no reason why the Gunpowder Treason should ever be forgot.", #V for Vendetta
+    "The only verdict is vengeance; a vendetta, held as a votive not in vain, for the value and veracity of such shall one day vindicate the vigilant and the virtuous.", #V for Vendetta
+    "Behind {first} there is more than just flesh. Beneath this user there is an idea... and ideas are bulletproof.", #V for Vendetta
+    "Love your rage, not your cage.", #V for Vendetta
+    "Get your stinking paws off me, you damned dirty ape!", #Planet of the apes
     "Elementary, my dear {first}.",
     "I'm back - {first}.",
     "Bond. {first} Bond.",
     "Come with me if you want to live",
+    "I Believe My Squad Will Be Victorious! ...",
+    "You Have The Freedom To Defend The World's Freedom And I Have The Freedom To Continue Moving Forward.",
+    "I'm The Same As You {first},I didnt had any choice",
+    "I'm Not Planning On Handing It Down To Any Of You",
+    "I'm Gonna Destroy Them! Every last one of those titans thats on this earth",
+    "Hey {first} If we kill all our enemies over there will we finally be free?",
+    "You're Not a Soldier {first}",
+    " Sasageyo, Sasageyo! {first}wa Sasageyo",
 ]
 DEFAULT_GOODBYE_MESSAGES = [
     "{first} will be missed.",
@@ -220,6 +227,7 @@ DEFAULT_GOODBYE_MESSAGES = [
     "The devil in disguise",
     "Go outside",
     "Always your head in the clouds",
+    " Give Up On Your Dreams And Die!",
 ]
 # Line 111 to 152 are references from https://bindingofisaac.fandom.com/wiki/Fortune_Telling_Machine
 
