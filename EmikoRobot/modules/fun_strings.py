@@ -1,16 +1,18 @@
 RUN_STRINGS = (
-    "Now you see me, now you don't.",
-    "ε=ε=ε=ε=┌(;￣▽￣)┘",
-    "Get back here!",
+    "Now you see me, now you don't.", "ε=ε=ε=ε=┌(;￣▽￣)┘",
+    "Get over here!",
     "REEEEEEEEEEEEEEEEEE!!!!!!!",
     "Look out for the wall!",
     "Don't leave me alone with them!!",
-    "You've got company!",
+    "You've got a company!",
     "Chotto matte!",
     "Yare yare daze",
+    "Matte Kudasai",
+    "Yamete!!! Yamete Kudasai",
+    "WTF",
     "*Naruto run activated*",
     "*Nezuko run activated*",
-    "Hey take responsibilty for what you just did!",
+    "Hey!! Take responsibilty for what you just did!",
     "May the odds be ever in your favour.",
     "Run everyone, they just dropped a bomb 💣💣",
     "And they disappeared forever, never to be seen again.",
@@ -35,11 +37,13 @@ SLAP_SAITAMA_TEMPLATES = (
         "tmute",  # command
         "Shut up!",
         "Silence!",
+        "Urusei!",
     ],
 )
 
 SLAP_TEMPLATES = (
     "{user2} was killed by magic.",
+    "{user2} became more useless than Sakura Haruno!!",
     "{user2} starved without pats.",
     "{user2} was knocked into the void by {user1}.",
     "{user2} fainted.",
@@ -117,6 +121,7 @@ SLAP_TEMPLATES = (
     "{user1} {throws} a master ball at {user2}, resistance is futile.",
     "{user1} hits {user2} with an action beam...bbbbbb (ง・ω・)ง ====*",
     "{user1} ara ara's {user2}.",
+    "{user1} Kamehame ha's {user2}."
     "{user1} ora ora's {user2}.",
     "{user1} muda muda's {user2}.",
     "{user2} was turned into a Jojo reference!",
