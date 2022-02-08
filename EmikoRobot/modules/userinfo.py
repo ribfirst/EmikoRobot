@@ -125,7 +125,7 @@ def make_bar(per):
 
 
 
-async def get_id(update: Update, context: CallbackContext):
+def get_id(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
     chat = update.effective_chat
@@ -206,7 +206,7 @@ async def group_info(event) -> None:
 
 
 
-async def gifid(update: Update, context: CallbackContext):
+def gifid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.animation:
         update.effective_message.reply_text(
@@ -218,7 +218,7 @@ async def gifid(update: Update, context: CallbackContext):
 
 
 
-async def info(update: Update, context: CallbackContext):
+def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
     chat = update.effective_chat
@@ -364,7 +364,7 @@ async def info(update: Update, context: CallbackContext):
 
 
 
-async def about_me(update: Update, context: CallbackContext):
+def about_me(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
     user_id = extract_user(message, args)
@@ -392,7 +392,7 @@ async def about_me(update: Update, context: CallbackContext):
 
 
 
-async def set_about_me(update: Update, context: CallbackContext):
+def set_about_me(update: Update, context: CallbackContext):
     message = update.effective_message
     user_id = message.from_user.id
     if user_id in [777000, 1087968824]:
@@ -425,7 +425,7 @@ async def set_about_me(update: Update, context: CallbackContext):
 
 
 @sudo_plus
-async def stats(update, context):
+def stats(update, context):
     uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
     status = "*╒═══『 System statistics 』*\n\n"
     status += "*✧ Python Version:* " + python_version() + "\n"
