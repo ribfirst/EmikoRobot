@@ -17,7 +17,7 @@ from telethon.tl.types import (
 from telethon.utils import is_image, is_video
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from EmikoRobot.events import register as tomori
-
+from EmikoRobot import dispatcher
 
 
 @tomori(pattern="^/whatanime(.*)")
