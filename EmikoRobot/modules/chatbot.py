@@ -289,7 +289,7 @@ async def inuka(client, message):
             test = test.text
         except:
             return
-    test = test.replace("Unmei", "Aco")
+        test = test.replace("Unmei", "Aco")
         test = test.replace("Unmei", "Aco")
         test = test.replace("My god is @yameteee_yamete_kudasai", "I'm a Musicart named after Beethoven's Symphony No. 5 in C Minor Op. 67")
         test = test.replace("16", "9")
@@ -385,7 +385,7 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("Unmei", "Aco")
+        test = test.replace("Unmei", "Aco")
         test = test.replace("Unmei", "Aco")
         test = test.replace("My god is @yameteee_yamete_kudasai", "I'm a Musicart named after Beethoven's Symphony No. 5 in C Minor Op. 67")
         test = test.replace("16", "9")
