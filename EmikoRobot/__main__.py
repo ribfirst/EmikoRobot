@@ -95,7 +95,7 @@ first_name_pm = ""
 
 PM_START_TEXT = """
 ────「 {} 」────
-*Hey there! {},*
+*Hey there!,*
 * I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
 ➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
@@ -279,7 +279,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"👋 Hi <code>{update.effective_user.first_name}[,](https://telegra.ph/file/8ca2ecf0e69797d8dac29.mp4)</code>, I'm {dispatcher.bot.first_name}. Nice to meet You.\n Uptime - <code> get_readable_time((time.time() - StartTime)) </code>",
+            f"👋 Hi <code>{update.effective_user.first_name}</code>, I'm {dispatcher.bot.first_name}. Nice to meet You.\n Uptime - <code> {get_readable_time((time.time() - StartTime))} </code>",
             parse_mode=ParseMode.HTML
        )
 
