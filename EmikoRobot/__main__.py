@@ -87,7 +87,7 @@ def initialize(update: Update, context: CallbackContext):
 PM_START_TEXT = """
 ────「 {} 」────
 *Hey! {},*
-* I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP.Destiny *
+* I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
 ➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖
@@ -113,10 +113,12 @@ buttons = [
 
 HELP_STRINGS = """
 Hello there, I'm Unmei Robot ! Some people do call me Destiny!!
-To make me functional, make sure that i have enough rights in your group.
+To make me functional, make sure that i have enough rights in your group[.](https://telegra.ph/file/26c430892d2ce0e407443.jpg)
 Helpful commands:
+
 - /start: It will starts me! You've probably used this, as you are here now.
 - /help: Send this message to me; I'll tell you more about my features!
+
 All commands can be used with the following: / !
 List of all the Modules:
 """.format(
@@ -453,7 +455,7 @@ def emiko_about_callback(update, context):
     elif query.data == "emiko_support":
         query.message.edit_text(
             text="*๏ Unmei support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Emiko.",
+            "\nJoin My Support Group/Channel for see or report a problem on Unmei.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -815,7 +817,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 Hi, i'm alive.",
+                "👋 Hi,)['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m alive.",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
