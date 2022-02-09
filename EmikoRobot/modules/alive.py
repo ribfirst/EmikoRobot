@@ -42,5 +42,5 @@ __command_list__ = [
     "alive"
 ]
 __handlers__ = [
-    ALIVE_HANDLER
+    AWAKE_HANDLER
 ]
