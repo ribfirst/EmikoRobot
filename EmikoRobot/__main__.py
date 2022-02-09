@@ -211,27 +211,26 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
     
-@telethn.on(events.NewMessage(pattern="/check"))
-async def awake(event):
-  Unmei = event.sender.first_name
-  Unmei = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ** \n\n"
-  Unmei += "**✩✮ I'm working fine as up now 👌︎.**\n\n"
-  Unmei += "**✩✮ Unmei: Version 1.0**\n\n"
-  Unmei += "**✩✮ っ◔◡◔)っ ♥ My Maestro ♥:** [Shoto](t.me/yameteee_yamete_kudasai)\n\n"
-  Unmei += "**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **\n\n"
-  Unmei += "**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**\n\n"
-  UNMEI_BUTTON = [
-      [
-          Button.url("🚑 Support", f"https://t.me/unmei_support"),
-          Button.url("📢 Updates", "https://t.me/unmei_updates")
-      ]
-  ]
-  await telethn.send_file(
-      event.chat_id,
-      EMI_IMG,
-      caption = 𝚄nmei,
-      buttons = UNMEI_BUTTON,
-  )
+def awake(update: Update, context: CallbackContext):
+    first_name = update.effective_user.first_name
+    Unmei = "**Hola {first_name}, ** \n\n"
+    Unmei = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ** \n\n"
+    Unmei += "**✩✮ I'm working fine as up now 👌︎.**\n\n"
+    Unmei += "**✩✮ Unmei: Version 1.0**\n\n"
+    Unmei += "**✩✮ っ◔◡◔)っ ♥ My Maestro ♥:** [Shoto](t.me/yameteee_yamete_kudasai)\n\n"
+    Unmei += "**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **\n\n"
+    Unmei += "**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**\n\n"
+    UNMEI_BUTTON = [
+        [
+            Button.url("🚑 Support", f"https://t.me/unmei_support"),
+            Button.url("📢 Updates", "https://t.me/unmei_updates")
+        ]
+    ]
+    await telethn.send_file(
+        EMI_IMG,
+        caption = 𝚄nmei,
+        buttons = UNMEI_BUTTON,
+    )
 
 def start(update: Update, context: CallbackContext):
     args = context.args
