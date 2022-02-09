@@ -226,12 +226,12 @@ async def awake(event):
           Button.url("📢 Updates", "https://t.me/unmei_updates")
       ]
   ]
-  await telethn.send_file(
-      event.chat_id,
-      EMI_IMG,
-      caption = 𝚄nmei,
-      buttons = UNMEI_BUTTON,
-  )
+#  await telethn.send_file(
+#      event.chat_id,
+#      EMI_IMG,
+#      caption = 𝚄nmei,
+#      buttons = UNMEI_BUTTON,
+#  )
 
 def start(update: Update, context: CallbackContext):
     args = context.args
@@ -278,26 +278,10 @@ def start(update: Update, context: CallbackContext):
                 disable_web_page_preview=False,
             )
     else:
-        update.effective_message.reply_animation(
-            GROUP_START_IMG, caption= "I won't sleep because I believe someone is waiting for your music. I'm awake since :</b> <code>{}</code>".format(
-                uptime
-            ),
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="🚑 Support",
-                            url=f"https://telegram.dog/unmei_support",
-                        ),
-                        InlineKeyboardButton(
-                            text="📢 Updates",
-                            url="https://t.me/unmei_updates",
-                        ),
-                    ]
-                ]
-            ),
-        )
+        update.effective_message.reply_text(
+            f"👋 Hi, I'm {dispatcher.bot.first_name}. Nice to meet You.",
+            parse_mode=ParseMode.HTML
+       )
 
 
 def error_handler(update, context):
