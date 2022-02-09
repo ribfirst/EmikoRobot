@@ -279,8 +279,9 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_animation(
-            GROUP_START_IMG, caption= "I won't sleep because I believe someone is waiting for your music. I'm awake since :</b> <code>{}</code>".format(uptime)
-        ),
+            GROUP_START_IMG, caption= "I won't sleep because I believe someone is waiting for your music. I'm awake since :</b> <code>{}</code>".format(
+                uptime
+            ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
