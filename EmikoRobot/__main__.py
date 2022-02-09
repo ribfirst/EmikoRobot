@@ -280,7 +280,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<img src="https://telegra.ph/file/a1b94d70177272a834699.jpg"/>👋 Hi <code>{update.effective_user.first_name}</code><br>I won't sleep because I believe someone is waiting for your music.<br><br> Uptime - <code> {get_readable_time((time.time() - StartTime))} </code>",
+            f"<img src='https://telegra.ph/file/a1b94d70177272a834699.jpg'/> 👋 Hi <b><code>{update.effective_user.first_name}</code></b><br>I won't sleep because I believe someone is waiting for your music.<br><br> Uptime - <code> {get_readable_time((time.time() - StartTime))} </code>",
             parse_mode=ParseMode.HTML
        )
 
