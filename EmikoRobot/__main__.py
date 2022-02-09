@@ -876,7 +876,7 @@ def main():
 
     test_handler = CommandHandler("test", test, run_async=True)
     start_handler = CommandHandler("start", start, run_async=True)
-    check_handler = CommandHandler("check", check, run_async=True)
+    check_handler = CommandHandler("check", awake, run_async=True)
 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
