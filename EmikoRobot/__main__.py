@@ -137,7 +137,7 @@ buttons = [[InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://tele
 
 buttons = [[InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")],[InlineKeyboardButton(text="[『 Help 』]", callback_data="help_back"),InlineKeyboardButton(text="❔ Chat and Req Anime?", url="https://t.me/tas_support"),InlineKeyboardButton(text="[『 Inline 』]", switch_inline_query_current_chat=""),],[InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates")]]
 
-
+GROUP_START_IMG = "https://telegra.ph/file/2d9b9613c4c7f8310c6d1.mp4"
 EMI_IMG = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -278,10 +278,25 @@ def start(update: Update, context: CallbackContext):
                 disable_web_page_preview=False,
             )
     else:
-        update.effective_message.reply_text(
-            f"👋 Hi[,](https://telegra.ph/file/7402b4f4dba735b14ee9f.mp4) I\'m {dispatcher.bot.first_name}. Nice to meet You.\n I haven\'t slept since {get_readable_time((time.time() - StartTime))}, because of your music",
-            parse_mode=ParseMode.HTML
-       )
+        update.effective_message.reply_animation(
+            GROUP_START_IMG, caption= "I won't sleep because I believe someone is waiting for your music. I'm awake since :</b> <code>{}</code>".format(uptime)
+        ),
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="🚑 Support",
+                            url=f"https://telegram.dog/unmei_support",
+                        ),
+                        InlineKeyboardButton(
+                            text="📢 Updates",
+                            url="https://t.me/unmei_updates",
+                        ),
+                    ]
+                ]
+            ),
+        )
 
 
 def error_handler(update, context):
@@ -860,6 +875,7 @@ def main():
 
     test_handler = CommandHandler("test", test, run_async=True)
     start_handler = CommandHandler("start", start, run_async=True)
+    check_handler = CommandHandler("check", check, run_async=True)
 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
@@ -885,6 +901,7 @@ def main():
     )
 
     dispatcher.add_handler(test_handler)
+    dispatcher.add_handler(check_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
@@ -894,7 +911,6 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-
     dispatcher.add_error_handler(error_callback)
 
     if WEBHOOK:
