@@ -86,12 +86,11 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
-first1=""
-uptime2=0
-#user = await app.get_users(user)
 
-#first1=user.first_name
- 
+def PM_start(update: Update, context: CallbackContext):
+    args = context.args
+    uptime = get_readable_time((time.time() - StartTime))
+    first_name = update.effective_user.first_name
 
 PM_START_TEXT = """
 ────「 {} 」────
@@ -101,7 +100,7 @@ PM_START_TEXT = """
 • *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖
 ✧ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ××
-""".format(dispatcher.bot.first_name,start.first_name,start.uptime)
+""".format(dispatcher.bot.first_name,PM_start.first_name,PM_start.uptime)
 
 buttons = [
     [
