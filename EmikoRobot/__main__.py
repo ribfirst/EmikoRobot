@@ -44,6 +44,7 @@ from EmikoRobot.modules import ALL_MODULES
 from EmikoRobot.modules.helper_funcs.chat_status import is_user_admin
 from EmikoRobot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+from telethon import Button, events
 from telegram.error import (
     BadRequest,
     ChatMigrated,
