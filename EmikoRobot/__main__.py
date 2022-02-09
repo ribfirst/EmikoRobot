@@ -87,10 +87,10 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-def PM_start(update: Update, context: CallbackContext):
-    args = context.args
-    uptime = get_readable_time((time.time() - StartTime))
-    first_name = update.effective_user.first_name
+#def PM_start(update: Update, context: CallbackContext):
+#    args = context.args
+     uptime_pm = get_readable_time((time.time() - StartTime))
+     first_name_pm = ""
 
 PM_START_TEXT = """
 ────「 {} 」────
@@ -100,7 +100,7 @@ PM_START_TEXT = """
 • *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖
 ✧ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ××
-""".format(dispatcher.bot.first_name,PM_start.first_name,PM_start.uptime)
+""".format(dispatcher.bot.first_name,first_name_pm,uptime_pm)
 
 buttons = [
     [
@@ -209,6 +209,28 @@ def test(update: Update, context: CallbackContext):
     update.effective_message.reply_text("This person edited a message")
     print(update.effective_message)
 
+    
+@telethn.on(events.NewMessage(pattern="/check"))
+async def awake(event):
+  Unmei = event.sender.first_name
+  Unmei = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ** \n\n"
+  Unmei += "**✩✮ I'm working fine as up now 👌︎.**\n\n"
+  Unmei += "**✩✮ Unmei: Version 1.0**\n\n"
+  Unmei += "**✩✮ っ◔◡◔)っ ♥ My Maestro ♥:** [Shoto](t.me/yameteee_yamete_kudasai)\n\n"
+  Unmei += "**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **\n\n"
+  Unmei += "**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**\n\n"
+  UNMEI_BUTTON = [
+      [
+          Button.url("🚑 Support", f"https://t.me/unmei_support"),
+          Button.url("📢 Updates", "https://t.me/unmei_updates")
+      ]
+  ]
+  await telethn.send_file(
+      event.chat_id,
+      FLARE_PHOTO,
+      caption = 𝚄𝙽𝙼𝙴𝙸,
+      buttons = UNMEI_BUTTON,
+  )
 
 def start(update: Update, context: CallbackContext):
     args = context.args
