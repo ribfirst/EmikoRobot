@@ -101,7 +101,7 @@ PM_START_TEXT = """
 • *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖
 ✧ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ××
-""".format(dispatcher.bot.first_name,first1,get_readable_time((time.time() - StartTime)))
+""".format(dispatcher.bot.first_name,start.first_name,start.uptime)
 
 buttons = [
     [
@@ -257,7 +257,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"👋 Hi, I'm {dispatcher.bot.first_name}. Nice to meet You.",
+            f"👋 Hi, I['](https://telegra.ph/file/7402b4f4dba735b14ee9f.mp4)m {dispatcher.bot.first_name}. Nice to meet You.\n I haven't slept since {}, because of your music".format(uptime),
             parse_mode=ParseMode.HTML
        )
 
