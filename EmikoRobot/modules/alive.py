@@ -39,10 +39,8 @@ AWAKE_HANDLER = DisableAbleCommandHandler("alive", awake, run_async=True)
 dispatcher.add_handler(AWAKE_HANDLER)
 __mod_name__ = "Alive"
 __command_list__ = [
-
-
-
     "alive"
-
 ]
-
+__handlers__ = [
+    ALIVE_HANDLER
+]
