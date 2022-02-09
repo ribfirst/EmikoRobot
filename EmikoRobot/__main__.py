@@ -229,7 +229,7 @@ async def awake(event):
   await telethn.send_file(
       event.chat_id,
       EMI_IMG,
-      caption = 𝚄𝙽𝙼𝙴𝙸,
+      caption = "𝚄𝙽𝙼𝙴𝙸",
       buttons = UNMEI_BUTTON,
   )
 
