@@ -7,7 +7,15 @@ from telethon import __version__ as tlhver
 from pyrogram import __version__ as pyrover
 from EmikoRobot.events import register
 from EmikoRobot import telethn as tbot
+from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher
 
+from EmikoRobot.modules.disable import DisableAbleCommandHandler
+
+from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
+
+                      Update)
+
+from telegram.ext import CallbackContext, CallbackQueryHandler
 
 PHOTO = "https://telegra.ph/file/060ea554c591fc5b0b878.jpg"
 
@@ -25,3 +33,16 @@ async def awake(event):
         ]
     ]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
+
+AWAKE_HANDLER = DisableAbleCommandHandler("alive", awake, run_async=True)
+
+dispatcher.add_handler(AWAKE_HANDLER)
+__mod_name__ = "Alive"
+__command_list__ = [
+
+
+
+    "alive"
+
+]
+
