@@ -211,9 +211,9 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
     
-async def awake(update: Update):
-    first_name = update.effective_user.first_name
-    Unmei = "**Hola {first_name}, ** \n\n"
+@telethn.on(events.NewMessage(pattern="/check"))
+async def awake(event):
+    Unmei = event.sender.first_name
     Unmei = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ** \n\n"
     Unmei += "**✩✮ I'm working fine as up now 👌︎.**\n\n"
     Unmei += "**✩✮ Unmei: Version 1.0**\n\n"
@@ -227,10 +227,12 @@ async def awake(update: Update):
         ]
     ]
     await telethn.send_file(
+        event.chat_id,
         EMI_IMG,
-        caption = 𝚄nmei,
+        caption = Unmei,
         buttons = UNMEI_BUTTON,
     )
+
 
 def start(update: Update, context: CallbackContext):
     args = context.args
