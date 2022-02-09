@@ -280,7 +280,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"👋 Hi <b><code>{update.effective_user.first_name}</code></b><br>I won't sleep because I believe someone is waiting for your music.<br><br> Uptime - <code> {get_readable_time((time.time() - StartTime))} </code>",
+            f"👋 Hi <b><code>{update.effective_user.first_name}</code></b><code> \n I won't sleep because I believe someone is waiting for your music.\n\n Uptime - <code> {get_readable_time((time.time() - StartTime))} </code>",
             parse_mode=ParseMode.HTML
        )
 
