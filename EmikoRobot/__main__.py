@@ -138,7 +138,7 @@ buttons = [[InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://tele
 buttons = [[InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")],[InlineKeyboardButton(text="[『 Help 』]", callback_data="help_back"),InlineKeyboardButton(text="❔ Chat and Req Anime?", url="https://t.me/tas_support"),InlineKeyboardButton(text="[『 Inline 』]", switch_inline_query_current_chat=""),],[InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates")]]
 
 
-EMI_IMG = "https://telegra.ph/file/cb57c2af871c60bfdf732.jpg"
+EMI_IMG = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @yameteee_yamete_kudasai \
@@ -228,7 +228,7 @@ async def awake(event):
   ]
   await telethn.send_file(
       event.chat_id,
-      FLARE_PHOTO,
+      EMI_IMG,
       caption = 𝚄𝙽𝙼𝙴𝙸,
       buttons = UNMEI_BUTTON,
   )
