@@ -7,6 +7,14 @@ import re
 import sys
 import traceback
 import EmikoRobot.modules.sql.users_sql as sql
+from EmikoRobot.modules.helper_funcs.extraction import (
+
+    extract_user,
+
+    extract_user_and_text,
+
+)
+from EmikoRobot import pbot as app
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
@@ -80,9 +88,10 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 first1=""
 uptime2=0
-def initialize(update: Update, context: CallbackContext):
-    first1 = update.effective_user.first_name
-    uptime2 = get_readable_time((time.time() - StartTime))
+user = await app.get_users(user)
+
+first1=user.first_name
+ 
 
 PM_START_TEXT = """
 ────「 {} 」────
@@ -92,7 +101,7 @@ PM_START_TEXT = """
 • *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖
 ✧ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ××
-""".format(dispatcher.bot.first_name,first1,uptime2)
+""".format(dispatcher.bot.first_name,first1,get_readable_time((time.time() - StartTime)))
 
 buttons = [
     [
