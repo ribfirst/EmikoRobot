@@ -257,7 +257,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"👋 Hi, I['](https://telegra.ph/file/7402b4f4dba735b14ee9f.mp4)m {dispatcher.bot.first_name}. Nice to meet You.\n I haven't slept since {}, because of your music".format(uptime),
+            f"👋 Hi, I['](https://telegra.ph/file/7402b4f4dba735b14ee9f.mp4)m {dispatcher.bot.first_name}. Nice to meet You.\n I haven\'t slept since {get_readable_time((time.time() - StartTime))}, because of your music",
             parse_mode=ParseMode.HTML
        )
 
