@@ -142,7 +142,7 @@ EMI_IMG = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @yameteee_yamete_kudasai \
- Supporting isnt always financial! \
+ Supporting isn't always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
 IMPORTED = {}
@@ -279,7 +279,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"👋 Hi, I['](https://telegra.ph/file/7402b4f4dba735b14ee9f.mp4)m {dispatcher.bot.first_name}. Nice to meet You.\n I haven\'t slept since {get_readable_time((time.time() - StartTime))}, because of your music",
+            f"👋 Hi[,](https://telegra.ph/file/7402b4f4dba735b14ee9f.mp4) I\'m {dispatcher.bot.first_name}. Nice to meet You.\n I haven\'t slept since {get_readable_time((time.time() - StartTime))}, because of your music",
             parse_mode=ParseMode.HTML
        )
 
