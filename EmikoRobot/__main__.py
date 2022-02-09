@@ -101,7 +101,7 @@ PM_START_TEXT = """
 • *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖
 ✧ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ××
-""".format(dispatcher.bot.first_name,first_name_pm,uptime_pm)
+"""
 
 buttons = [
     [
@@ -226,12 +226,12 @@ async def awake(event):
           Button.url("📢 Updates", "https://t.me/unmei_updates")
       ]
   ]
-#  await telethn.send_file(
-#      event.chat_id,
-#      EMI_IMG,
-#      caption = 𝚄nmei,
-#      buttons = UNMEI_BUTTON,
-#  )
+  await telethn.send_file(
+      event.chat_id,
+      EMI_IMG,
+      caption = 𝚄nmei,
+      buttons = UNMEI_BUTTON,
+  )
 
 def start(update: Update, context: CallbackContext):
     args = context.args
@@ -279,7 +279,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"👋 Hi, I'm {dispatcher.bot.first_name}. Nice to meet You.",
+            f"👋 Hi <code>{update.effective_user.first_name}[,](https://telegra.ph/file/8ca2ecf0e69797d8dac29.mp4)</code>, I'm {dispatcher.bot.first_name}. Nice to meet You.\n Uptime - <code> get_readable_time((time.time() - StartTime)) </code>",
             parse_mode=ParseMode.HTML
        )
 
