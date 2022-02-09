@@ -89,12 +89,12 @@ def get_readable_time(seconds: int) -> str:
 
 #def PM_start(update: Update, context: CallbackContext):
 #    args = context.args
-     uptime_pm = get_readable_time((time.time() - StartTime))
-     first_name_pm = ""
+uptime_pm = get_readable_time((time.time() - StartTime))
+first_name_pm = ""
 
 PM_START_TEXT = """
 ────「 {} 」────
-*Hey! {},*
+*Hey there! {},*
 * I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
 ➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
