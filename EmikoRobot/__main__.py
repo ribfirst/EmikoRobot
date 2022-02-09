@@ -88,9 +88,9 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 first1=""
 uptime2=0
-user = await app.get_users(user)
+#user = await app.get_users(user)
 
-first1=user.first_name
+#first1=user.first_name
  
 
 PM_START_TEXT = """
