@@ -211,7 +211,7 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
     
-def awake(update: Update, context: CallbackContext):
+def awake(update: Update):
     first_name = update.effective_user.first_name
     Unmei = "**Hola {first_name}, ** \n\n"
     Unmei = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ** \n\n"
