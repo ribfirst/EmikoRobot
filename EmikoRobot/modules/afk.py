@@ -65,17 +65,25 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} arrived! I saw you were stocking in this chat! aren't you?"
-                "Hehe, {} is back now, how tf you were even busy?"
-                "Guys, {} got a girlfried, that's why he was busy.\n Like I care Huh!!!"
-                "{}, chotto matte!! you came out of no where!!"
-                "{}, Spammer D2 arrived, lemme grab my ban hammer."
-                "{}, go back to sleep!!!"
-                "Were you playing Poker, {}? A Strip Poker, hehe!!!"
-                "Yeah, pro like {} arrived again, beware of some noobs!!!"
-                "Dear {}, Are you a BTS Lover. I know you were watching it?"
-                "{}, I know were watching something dirty, that's why you were away."
-                "Why came back, {}? Girls are away from chat already."
+                "{} arrived! I saw you were stocking in this chat! aren't you?",
+                "Hehe, {} is back now, how tf you were even busy?",
+                "Guys, {} got a girlfried, that's why he was busy.",
+                "{}, chotto matte!! you came out of no where!!",
+                "{}, Spammer D2 arrived, lemme grab my ban hammer.",
+                "{}, go back to sleep!!!",
+                "Were you playing Poker, {}? A Strip Poker, hehe!!!",
+                "Yeah, pro like {} arrived again, beware of some noobs!!!",
+                "Dear {}, Are you a BTS Lover. I know you were watching it?",
+                "{}, I know were watching something dirty, that's why you were away.",
+                "Why came back, {}? Girls are away from chat already.",
+                "{} is here!",
+                "{} is back!",
+                "{} is now in the chat!",
+                "{} is awake!",
+                "{} is back online!",
+                "{} is finally here!",
+                "Welcome back! {}",
+                "Where is {}?\nIn the chat!",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
