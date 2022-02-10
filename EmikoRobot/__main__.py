@@ -8,11 +8,8 @@ import sys
 import traceback
 import EmikoRobot.modules.sql.users_sql as sql
 from EmikoRobot.modules.helper_funcs.extraction import (
-
     extract_user,
-
     extract_user_and_text,
-
 )
 from EmikoRobot import pbot as app
 from sys import argv
@@ -249,7 +246,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="[『 Back 』]", callback_data="help_back")]]
                     ),
                 )
 
@@ -269,6 +266,7 @@ def start(update: Update, context: CallbackContext):
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
                 PM_START_TEXT.format(
+                    escape_markdown(context.bot.first_name),
                     escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
@@ -276,14 +274,28 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-                disable_web_page_preview=False,
             )
     else:
-        update.effective_message.reply_text(
-            f"👋 Hi <b><code>{update.effective_user.first_name}</code></b>\n I won't sleep because I believe someone is waiting for your music.\n\n Uptime - <code> {get_readable_time((time.time() - StartTime))} </code>",
-            parse_mode=ParseMode.HTML
-       )
-
+        update.effective_message.reply_animation(
+            GROUP_START_IMG, caption= "I won\'t sleep yet, because I believe someone is waiting for your music.\n I\'m awake since :</b> <code>{}</code>".format(
+                uptime
+            ),
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="🚑 Support",
+                            url=f"https://telegram.dog/unmei_support",
+                        ),
+                        InlineKeyboardButton(
+                            text="📢 Updates",
+                            url="https://t.me/unmei_updates",
+                        ),
+                    ]
+                ]
+            ),
+        )
 
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
