@@ -106,8 +106,9 @@ class CustomCommandHandler(CommandHandler):
         if context:
             self.collect_additional_context(context, update, dispatcher, check_result)
             return self.callback(update, context)
-        optional_args = self.collect_optional_args(dispatcher, update, check_result)
-        return self.callback(dispatcher.bot, update, **optional_args)
+        else:
+            optional_args = self.collect_optional_args(dispatcher, update, check_result)
+            return self.callback(dispatcher.bot, update, **optional_args)
 
     def collect_additional_context(self, context, update, dispatcher, check_result):
         if isinstance(check_result, bool):
