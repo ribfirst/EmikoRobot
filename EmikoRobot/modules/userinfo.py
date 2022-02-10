@@ -6,6 +6,7 @@ import datetime
 import platform
 import time
 
+from telegram import __version__ as ptbversion
 from psutil import cpu_percent, virtual_memory, disk_usage, boot_time
 from platform import python_version
 from telethon.tl.functions.channels import GetFullChannelRequest
