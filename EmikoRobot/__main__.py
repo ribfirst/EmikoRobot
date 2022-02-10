@@ -92,7 +92,7 @@ first_name_pm = ""
 
 PM_START_TEXT = """
 ────「 {} 」────
-*Hey there!,*
+*Hey there {}!,*
 * I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
 ➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
@@ -263,11 +263,11 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            first_name = update.effective_user.first_name
+            #first_name = update.effective_user.first_name
             update.effective_message.reply_text(
                 PM_START_TEXT.format(
                     escape_markdown(context.bot.first_name),
-                    escape_markdown(first_name),
+                    escape_markdown(update.effective_user.first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
                     sql.num_chats()),                        
