@@ -32,7 +32,7 @@ from EmikoRobot import (
     StartTime,
     SUPPORT_CHAT,
 )
-from EmikoRobot.__main__ import STATS, TOKEN, USER_INFO
+from EmikoRobot.__main__ import STATS, TOKEN, USER_INFO, get_readable_time
 from EmikoRobot.modules.sql import SESSION
 import EmikoRobot.modules.sql.userinfo_sql as sql
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
