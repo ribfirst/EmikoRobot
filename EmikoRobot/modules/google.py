@@ -61,7 +61,7 @@ async def _(event):
     )
 
 
-@register(pattern="^/image (.*)")
+@register(pattern="^/img (.*)")
 async def img_sampler(event):
     if event.fwd_from:
         return
@@ -70,7 +70,7 @@ async def img_sampler(event):
     jit = f'"{query}"'
     downloader.download(
         jit,
-        limit=4,
+        limit=6,
         output_dir="store",
         adult_filter_off=False,
         force_replace=False,
@@ -280,7 +280,7 @@ __mod_name__ = "Search"
 
 __help__ = """
 ❂ /google <query>*:* Perform a google search
-❂ /image <query>*:* Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
+❂ /img <query>*:* Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
 ❂ /app <appname>*:* Searches for an app in Play Store and returns its details.
 ❂ /reverse: Does a reverse image search of the media which it was replied to.
 ❂ /gps <location>*:* Get gps location.
