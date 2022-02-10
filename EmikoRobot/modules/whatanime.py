@@ -27,7 +27,7 @@ from datetime import timedelta
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from EmikoRobot.events import register as tomori
-from EmikoRobot import dispatcher
+from EmikoRobot import dispatcher, pbot
 
 session = aiohttp.ClientSession()
 progress_callback_data = {}
@@ -58,7 +58,7 @@ def calculate_eta(current, total, start_time):
     thing[-1] = thing[-1].rjust(8, '0')
     return ', '.join(thing)
 
-@tomori(pattern="^/whatanime(.*)")
+@pbot.on_message(filters.command('whatanime'))
 async def whatanime(c: Client, m: Message):
     media = m.photo or m.animation or m.video or m.document
     if not media:
