@@ -1,7 +1,7 @@
 RUN_STRINGS = (
     "Now you see me, now you don't.", "ε=ε=ε=ε=┌(;￣▽￣)┘",
     "Get over here!",
-    "REEEEEEEEEEEEEEEEEE!!!!!!!",
+    "Nigheroooooooo!!!!!!",
     "Look out for the wall!",
     "Don't leave me alone with them!!",
     "You've got a company!",
@@ -26,18 +26,24 @@ GIFS = [
     "CgACAgQAAx0CSVUvGgAC7KpfWxMrgGyQs-GUUJgt-TSO8cOIDgACaAgAAlZD0VHT3Zynpr5nGxsE",
     "CgACAgUAAx0CU_rCTAABAjdgX1s4NVaeCls6YaH3p43vgdCRwQIAAqsAA4P_MFUYQhyoR-kgpRsE",
     "CgACAgUAAx0CU_rCTAABAjdSX1s3fq5iEJ64YeQLKI8cD7CSuSEAAlUBAAJu09hW5iqWB0hTPD4bBA",
+    "CgACAgQAAx0CY2kfkQACA81iBIz0YP_fRSp0ugSbj7QqmB0RwwAC-wIAAoNwvVK5kEmgsGl6tyME",
+    "CgACAgQAAx0CY2kfkQACA9BiBI0Wq1gMLVdKVALAnOtdZQABn8kAAsgCAAIhfjVTqg-aXh5k3PgjBA"
 ]
 
 SLAP_SAITAMA_TEMPLATES = (
     "Slap me one more time and I'll mute you.",
     "Stop slapping me. REEEEEEEEEEEEEE.",
     [
-        "I am muting you for a minute.",  # normal reply
+        "I am muting you for a minute. Be grateful, Hmmph!!",  # normal reply
         "Stop slapping me just because I can't mute you. REEEEEEEEEE.",  # reply to admin
         "tmute",  # command
         "Shut up!",
+        "Shut the f*** up",
         "Silence!",
         "Urusei!",
+        "Baka ka Omae? Why slapping me?",
+        "Yeah, Noob... Get wrecked!!",
+        "Are waah.... Bhaimya!!!"
     ],
 )
 
@@ -50,6 +56,7 @@ SLAP_TEMPLATES = (
     "{user2} is out of usable Pokemon! {user2} whited out!.",
     "{user2} is out of usable Pokemon! {user2} blacked out!.",
     "{user2} got rekt.",
+    "{user2} overdid master-bhushan and died.",
     "{user2}'s melon was split by {user1}.",
     "{user2} was sliced and diced by {user1}.",
     "{user2} played hot-potato with a grenade.",
@@ -65,6 +72,7 @@ SLAP_TEMPLATES = (
     "{user1} beheaded {user2}.",
     "{user2} got stoned...by an angry mob.",
     "{user1} sued the pants off {user2}.",
+    "{user2} got pregnant. Don't know how.:P",
     "{user2} was one-hit KO'd by {user1}.",
     "{user1} sent {user2} down the memory hole.",
     "{user2} was a mistake. - '{user1}' ",
@@ -191,11 +199,20 @@ PAT_TEMPLATES = (
 PAT_GIFS = (
     "CgACAgQAAxkBAALRX19Xs7tBdOH1gQwS_rglVRkTbgVYAAKEAgACmQn9UWlyGa_xy9_aGwQ",
     "CgACAgEAAxkBAALRYF9Xs8EnhsDfDpld3ILoqTbzDmwxAAJFAAOJxjlHECanwn69E5QbBA",
+    "CgACAgQAAx0CY2kfkQACA9ZiBI6XvbCbckhQSrc17JDwBr0_-QAC9QIAAh8jtFLNjEWuory5PiME",
+    "CgACAgQAAx0CY2kfkQACA9diBI6bU-hg3zyK1KC0vhvac_w3JgACTwMAArL4tFKQj-2FTJFrViME",
+    "CgACAgQAAx0CY2kfkQACA9hiBI6cRYhyN2yKRRINneEpNsIK6AACEgMAAjgk3VIjeqiqw1sV_SME",
+    "CgACAgQAAx0CY2kfkQACA9liBI6fuPJW7Di2haYcS250Jf3gBgACAwMAApzrtFI7x0zvXF1KvyME",
+    "CgACAgQAAx0CY2kfkQACA9piBI6gLs9Hm28G43s8tAcxRzo-6wAC-wIAAoaivVI2rsRPncJY_CME"
 )
 
 PAT_STICKERS = (
     "CAACAgQAAxkBAALRWV9Xs4HH0XaXfhZe-jWaZoXfs-IsAAJYAwACdDgSEHYOt4KvL02oGwQ",
     "CAACAgQAAxkBAALRXF9Xs6XmIeDbnoL1wiDky0TdX-CvAAKKAQAC1TMzC9A3CtiT2rqVGwQ",
+    "CAACAgEAAx0CY2kfkQACA-diBI8duyeBYwfuZqMNJ6fuQgw6AQACSQwAApTKnglfJmIhn0zIryME",
+    "CAACAgIAAx0CY2kfkQACA-hiBI8o6Rt7AZjArlB7ZXDL9BLlTQACkAkAAoFtAUsGH6PFTQ0qxSME",
+    "CAACAgIAAx0CY2kfkQACA-liBI8r6zm0qCz355xyhr1aEdYTQQACdAkAAlye-EpEkN-hLgyMECME",
+    "CAACAgIAAx0CY2kfkQACA-piBI86Ge5Wf80g3AGE6qShqjpSlwACtAsAAsu5-UpEJLT3I5XSNCME",
 )
 
 PING_STRING = (
