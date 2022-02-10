@@ -46,7 +46,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} is now away!{}.\nShould I follow him/her to see what deeds he/she is doing behind my back?".format(fname, notice))
+        update.effective_message.reply_text("{} is now away!{}.\nMay be {} is doing something lewd behind my back?".format(fname, notice,fname))
     except BadRequest:
         pass
 
@@ -77,7 +77,6 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 "{}, I know were watching something dirty, that's why you were away.",
                 "Why came back, {}? Girls are away from chat already.",
                 "Okairinasai {} Nii-Chan!!"
-                "{} is finally here!",
                 "Where is {}?\nIn the chat!",
                 "{}, were you doing something lewd?\nI just saw a white stain on your T-shirt."
             ]
