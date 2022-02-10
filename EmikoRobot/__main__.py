@@ -276,26 +276,10 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_animation(
-            GROUP_START_IMG, caption= "I won\'t sleep yet, because I believe someone is waiting for your music.\n I\'m awake since :</b> <code>{}</code>".format(
-                uptime
-            ),
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="🚑 Support",
-                            url=f"https://telegram.dog/unmei_support",
-                        ),
-                        InlineKeyboardButton(
-                            text="📢 Updates",
-                            url="https://t.me/unmei_updates",
-                        ),
-                    ]
-                ]
-            ),
-        )
+        update.effective_message.reply_text(
+            "👋 Hi {}\nI won[']({})t sleep yet, because I believe someone is waiting for your Music.\n\n Uptime - {}".format(update.effective_user.first_name,GROUP_START_IMG,get_readable_time((time.time() - StartTime))),
+            parse_mode=ParseMode.MARKDOWN
+       )
 
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
