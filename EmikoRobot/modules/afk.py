@@ -76,14 +76,10 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 "Dear {}, Are you a BTS Lover. I know you were watching it?",
                 "{}, I know were watching something dirty, that's why you were away.",
                 "Why came back, {}? Girls are away from chat already.",
-                "{} is here!",
-                "{} is back!",
-                "{} is now in the chat!",
-                "{} is awake!",
-                "{} is back online!",
+                "Okairinasai {} Nii-Chan!!"
                 "{} is finally here!",
-                "Welcome back! {}",
                 "Where is {}?\nIn the chat!",
+                "{}, were you doing something lewd?\nI just saw a white stain on your T-shirt."
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
