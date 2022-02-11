@@ -8,7 +8,7 @@ import requests
 from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
-                      Update)
+                      Update, Message)
 from telegram.ext import CallbackContext, CallbackQueryHandler
 
 info_btn = "More Information"
