@@ -158,6 +158,15 @@ query ($id: Int,$search: String) {
 
 url = 'https://graphql.anilist.co'
 
+def extract_arg(message: Message):
+    split = message.text.split(" ", 1)
+    if len(split) > 1:
+        return split[1]
+    reply = message.reply_to_message
+    if reply is not None:
+        return reply.text
+    return None
+
 
 def airing(update: Update, context: CallbackContext):
     message = update.effective_message
