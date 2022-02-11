@@ -159,7 +159,7 @@ query ($id: Int,$search: String) {
 url = 'https://graphql.anilist.co'
 
 
-async def airing(update: Update, context: CallbackContext):
+def airing(update: Update, context: CallbackContext):
     message = update.effective_message
     search_str = extract_arg(message)
     if not search_str:
