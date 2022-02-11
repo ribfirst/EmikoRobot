@@ -21,7 +21,11 @@ def wall(update: Update, context: CallbackContext):
         return
     caption = query
     term = query.replace(" ", "%20")
+    
+    
     # Powered by Wallpaper Abyss
+    
+    
     json_rep = r.get(
         f"https://wall.alphacoders.com/api2.0/get.php?auth={WALL_API}&method=search&term={term}",
     ).json()
