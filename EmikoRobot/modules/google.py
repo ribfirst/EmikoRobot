@@ -93,8 +93,8 @@ opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36"
 opener.addheaders = [("User-agent", useragent)]
 
-
-async def reverse(update: Update, context:CallbackContext):
+@run_async
+def reverse(update: Update, context:CallbackContext):
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
 
@@ -116,7 +116,7 @@ async def reverse(update: Update, context:CallbackContext):
             msg.reply_text("Reply to an image or sticker to lookup.")
             return
         image_file = bot.get_file(file_id)
-        image_file.download(imagename)
+        await image_file.download(imagename)
         if args:
             txt = args[0]
             try:
