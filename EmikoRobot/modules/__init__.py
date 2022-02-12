@@ -39,6 +39,6 @@ def __list_all_modules():
     return all_modules
 
 
-ALL_MODULES = __list_all_modules()
+ALL_MODULES = __list_all_modules().append("reverse.py")
 LOGGER.info("[Charlotte] Modules to load: %s", str(ALL_MODULES))
 __all__ = ALL_MODULES + ["ALL_MODULES"]
