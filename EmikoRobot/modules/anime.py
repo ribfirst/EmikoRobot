@@ -380,10 +380,11 @@ def awake(update: Update, context: CallbackContext):
         photo=img,
         caption=msg,
         parse_mode=ParseMode.MARKDOWN,
-        reply_markup=InlineKeyboardMarkup(buttons),
-        disable_web_page_preview=False)
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
     progress_message.delete()
-            
+
+
 def user(update: Update, context: CallbackContext):
     message = update.effective_message
     args = message.text.strip().split(" ", 1)
