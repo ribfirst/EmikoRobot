@@ -15,6 +15,7 @@ from search_engine_parser import GoogleSearch
 from telegram.ext import CallbackContext, run_async
 import bs4
 import html2text
+from telegram import Update
 from bing_image_downloader import downloader
 from telethon import *
 from telethon.tl import functions
