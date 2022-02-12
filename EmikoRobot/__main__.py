@@ -224,7 +224,7 @@ def awake(update: Update, context: CallbackContext):
 	    [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
     ]
     update.effective_message.reply_text(
-        caption=msg,
+        msg,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup(buttons)
     )
