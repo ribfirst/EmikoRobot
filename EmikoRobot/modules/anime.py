@@ -356,9 +356,9 @@ def manga(update: Update, context: CallbackContext):
 
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
-    img = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
+    IMAGE = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
     msg = ""
-    msg += f"""{AWAKE_MSG}"""
+    msg += f"{AWAKE_MSG}"
     support = "t.me/unmei_support"
     owner = "t.me/yameteee_yamete_kudasai"
     buttons = [
@@ -366,9 +366,9 @@ def awake(update: Update, context: CallbackContext):
 	[InlineKeyboardButton("♥ Maestro ♥", url=owner)]
     ]
     update.effective_message.reply_photo(
-        photo=img,
+	IMAGE,
         caption=msg,
-        parse_mode=ParseMode.MARKDOWN,
+        parse_mode=ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(buttons)
     )
     progress_message.delete()
