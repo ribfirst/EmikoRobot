@@ -18,7 +18,7 @@ from telethon.utils import is_image, is_video
 
 from EmikoRobot.events import register
 
-@register(pattern="^/whatanime(.*)")
+@register(pattern="^/whatanime|sauce(.*)")
 async def whatanime(e):
     media = e.media
     if not media:
