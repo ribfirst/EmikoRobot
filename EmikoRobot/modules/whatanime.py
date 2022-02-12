@@ -93,7 +93,7 @@ def is_gif(file):
     # lazy to go to github and make an issue kek
     if not is_video(file):
         return False
-    return DocumentAttributeAnimated() in getattr(file, "document", file).
+    return DocumentAttributeAnimated() in getattr(file, "document", file)
 
 __help__ = """
 
