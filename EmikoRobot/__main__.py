@@ -203,7 +203,7 @@ def test(update: Update, context: CallbackContext):
 
 
 AWAKE_MSG = """
-**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ **
+**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ[.]({}) **
 
 **✩✮ I'm working fine as up now 👌︎.**
 
@@ -217,36 +217,17 @@ AWAKE_MSG = """
 
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = AWAKE_MSG
-    url = EMI_IMG
-    response = urllib.request.urlopen(url)
-    image = json.loads(response.read())
+    msg = AWAKE_MSG.format(EMI_IMG)
     #print (data)
     buttons = [
 	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
 	    [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
     ]
-    if image:
-        try:
-            update.effective_message.reply_photo(
-                photo=image,
-                caption=msg,
-                parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(buttons))
-        except:
-            msg += f" [〽️]({image})"
-            update.effective_message.reply_text(
-                msg,
-                parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(buttons)
-	    )
-        else:
-            update.effective_message.reply_text(
-                msg,
-                parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(buttons)
-	    )
-
+    update.effective_message.reply_text(
+        caption=msg,
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
 
 def start(update: Update, context: CallbackContext):
     args = context.args
