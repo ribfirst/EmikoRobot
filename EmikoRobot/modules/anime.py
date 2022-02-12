@@ -156,6 +156,19 @@ query ($id: Int,$search: String) {
     }
 """
 
+AWAKE_MSG = """
+**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ[.]({}) **
+
+**✩✮ I'm working fine as up now 👌︎.**
+
+**✩✮ Unmei: Version 1.2**
+
+**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **
+
+**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**
+
+""".format("https://telegra.ph/file/a4f96c30605ece22664ea.jpg")
+
 url = 'https://graphql.anilist.co'
 
 def extract_arg(message: Message):
@@ -352,7 +365,20 @@ def manga(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
-
+def awake(update: Update, context: CallbackContext):
+    message = update.effective_message
+    msg = AWAKE_MSG
+    #print (data)
+    buttons = [
+	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
+	    [InlineKeyboardButton("♥ Maestro ♥", url="t.me/yameteee_yamete_kudasai")]
+    ]
+    update.effective_message.reply_text(
+        msg,
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
+            
 def user(update: Update, context: CallbackContext):
     message = update.effective_message
     args = message.text.strip().split(" ", 1)
@@ -570,6 +596,7 @@ __help__ = """
 ❂ /quote: send quotes randomly as text
  """
 
+check_handler = DisableAbleCommandHandler("alive", awake, run_async=True)
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, run_async=True)
 AIRING_HANDLER = DisableAbleCommandHandler("airing", airing, run_async=True)
 CHARACTER_HANDLER = DisableAbleCommandHandler("character", character, run_async=True)
@@ -580,6 +607,7 @@ KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku, run_async
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo, run_async=True)
 BUTTON_HANDLER = CallbackQueryHandler(button, pattern='anime_.*')
 
+dispatcher.add_handler(check_handler)
 dispatcher.add_handler(BUTTON_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(CHARACTER_HANDLER)
