@@ -94,10 +94,12 @@ PM_START_TEXT = """
 ────「 {} 」────
 *Hey there {}!,*
 * I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
-➖➖➖➖➖➖➖➖➖➖➖
-• *Uptime:* `{}`
-➖➖➖➖➖➖➖➖➖➖➖
-✧ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ××
+
+➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
+ღღ    *Uptime:* `{}`    ღღ
+➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
+
+♡ Try The Help Button below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ♡
 """
 
 buttons = [
@@ -118,12 +120,11 @@ buttons = [
 
 
 HELP_STRINGS = """
-Hello there, I'm Unmei Robot ! Some people do call me Destiny!!
+Hello there, I'm Unmei Robot! Some people do call me Destiny.
 To make me functional, make sure that i have enough rights in your group[.](https://telegra.ph/file/26c430892d2ce0e407443.jpg)
 Helpful commands:
 
 - /start: It will starts me! You've probably used this, as you are here now.
-- /help: Send this message to me; I'll tell you more about my features!
 
 All commands can be used with the following: / !
 List of all the Modules:
@@ -207,28 +208,46 @@ def test(update: Update, context: CallbackContext):
     update.effective_message.reply_text("This person edited a message")
     print(update.effective_message)
 
-    
-@telethn.on(events.NewMessage(pattern="/check"))
-async def awake(event):
-    Unmei = event.sender.first_name
-    Unmei = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ** \n\n"
-    Unmei += "**✩✮ I'm working fine as up now 👌︎.**\n\n"
-    Unmei += "**✩✮ Unmei: Version 1.0**\n\n"
-    Unmei += "**✩✮ っ◔◡◔)っ ♥ My Maestro ♥:** [Shoto](t.me/yameteee_yamete_kudasai)\n\n"
-    Unmei += "**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **\n\n"
-    Unmei += "**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**\n\n"
-    UNMEI_BUTTON = [
-        [
-            Button.url("🚑 Support", f"https://t.me/unmei_support"),
-            Button.url("📢 Updates", "https://t.me/unmei_updates")
-        ]
-    ]
-    await telethn.send_file(
-        event.chat_id,
-        EMI_IMG,
-        caption = Unmei,
-        buttons = UNMEI_BUTTON,
-    )
+
+AWAKE_MSG = """
+**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ **
+
+**✩✮ I'm working fine as up now 👌︎.**
+
+**✩✮ Unmei: Version 1.2**
+
+**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **
+
+**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**
+
+"""
+
+def awake(update: Update, context: CallbackContext):
+    message = update.effective_message
+        msg = AWAKE_MSG
+        image = EMI_IMG
+        buttons = [
+		      [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
+		      [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
+		  ]
+        if image:
+            try:
+                update.effective_message.reply_photo(
+                    photo=image,
+                    caption=msg,
+                    parse_mode=ParseMode.MARKDOWN,
+                    reply_markup=InlineKeyboardMarkup(buttons))
+            except:
+                msg += f" [〽️]({image})"
+                update.effective_message.reply_text(
+                    msg,
+                    parse_mode=ParseMode.MARKDOWN,
+                    reply_markup=InlineKeyboardMarkup(buttons))
+        else:
+            update.effective_message.reply_text(
+                msg,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(buttons))
 
 
 def start(update: Update, context: CallbackContext):
@@ -277,7 +296,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "👋 Hi {}\nI won[']({})t sleep yet, because I believe someone is waiting for your Music.\n\n Uptime - {}".format(update.effective_user.first_name,GROUP_START_IMG,get_readable_time((time.time() - StartTime))),
+            "👋 Hi {}\nI won[']({})t sleep yet, because I believe someone is waiting for my Music.\n\n Uptime - {}".format(update.effective_user.first_name,GROUP_START_IMG,get_readable_time((time.time() - StartTime))),
             parse_mode=ParseMode.MARKDOWN
        )
 
@@ -857,7 +876,8 @@ def main():
 
     test_handler = CommandHandler("test", test, run_async=True)
     start_handler = CommandHandler("start", start, run_async=True)
-    check_handler = CommandHandler("check", awake, run_async=True)
+    #check_handler = CommandHandler("check", awake, run_async=True)
+    check_handler = CommandHandler("alive", awake, run_async=True)
 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
