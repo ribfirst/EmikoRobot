@@ -116,7 +116,7 @@ def reverse(update: Update, context:CallbackContext):
             msg.reply_text("Reply to an image or sticker to lookup.")
             return
         image_file = bot.get_file(file_id)
-        await image_file.download(imagename)
+        image_file.download(imagename)
         if args:
             txt = args[0]
             try:
