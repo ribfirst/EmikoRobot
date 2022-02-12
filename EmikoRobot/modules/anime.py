@@ -156,18 +156,11 @@ query ($id: Int,$search: String) {
     }
 """
 
-AWAKE_MSG = """
-**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. **
-
-**✩✮ I'm working fine as up now 👌︎.**
-
-**✩✮ Unmei: Version 1.2**
-
-**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **
-
-**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**
-
-"""
+AWAKE_MSG = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. **\n\n
+**✩✮ I'm working fine as up now 👌︎.**\n\n
+**✩✮ Unmei: Version 1.2**\n\n
+**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **\n\n
+**✩✮ 💞 ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**"
 
 url = 'https://graphql.anilist.co'
 
