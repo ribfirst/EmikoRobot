@@ -333,7 +333,7 @@ __help__ = """
 """
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["reverse","grs","pp"], reverse, parse_args=True, admin_ok=True
+    ["reverse","grs","pp"], reverse, pass_args=True, admin_ok=True
 )
 dispatcher.add_handler(REVERSE_HANDLER)
 
