@@ -224,30 +224,32 @@ AWAKE_MSG = """
 
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
-        msg = AWAKE_MSG
-        image = EMI_IMG
-        buttons = [
-		      [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
-		      [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
-		  ]
-        if image:
-            try:
-                update.effective_message.reply_photo(
-                    photo=image,
-                    caption=msg,
-                    parse_mode=ParseMode.MARKDOWN,
-                    reply_markup=InlineKeyboardMarkup(buttons))
-            except:
-                msg += f" [〽️]({image})"
-                update.effective_message.reply_text(
-                    msg,
-                    parse_mode=ParseMode.MARKDOWN,
-                    reply_markup=InlineKeyboardMarkup(buttons))
+    msg = AWAKE_MSG
+    image = EMI_IMG
+    buttons = [
+	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
+	    [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
+    ]
+    if image:
+        try:
+            update.effective_message.reply_photo(
+                photo=image,
+                caption=msg,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(buttons))
+        except:
+            msg += f" [〽️]({image})"
+            update.effective_message.reply_text(
+                msg,
+                parse_mode=ParseMode.MARKDOWN,
+                reply_markup=InlineKeyboardMarkup(buttons)
+	    )
         else:
             update.effective_message.reply_text(
                 msg,
                 parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(buttons))
+                reply_markup=InlineKeyboardMarkup(buttons)
+	    )
 
 
 def start(update: Update, context: CallbackContext):
