@@ -113,7 +113,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-Hello there, I'm Unmei Robot! Some people do call me Destiny.
+Hello there, I'm Unmei Bot! Some people do call me Destiny.
 To make me functional, make sure that i have enough rights in your group[.](https://telegra.ph/file/26c430892d2ce0e407443.jpg)
 Helpful commands:
 
@@ -123,10 +123,19 @@ All commands can be used with the following: / !
 List of all the Modules:
 """.format(
     dispatcher.bot.first_name, "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.")
-buttons = [[InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")],[InlineKeyboardButton(text="[『 Help 』]", callback_data="help_back"),InlineKeyboardButton(text="❔ Chat and Req Anime?", url="https://t.me/tas_support"),InlineKeyboardButton(text="[『 Inline 』]", switch_inline_query_current_chat=""),],[InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates")]]
-
-
-buttons = [[InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")],[InlineKeyboardButton(text="[『 Help 』]", callback_data="help_back"),InlineKeyboardButton(text="❔ Chat and Req Anime?", url="https://t.me/tas_support"),InlineKeyboardButton(text="[『 Inline 』]", switch_inline_query_current_chat=""),],[InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates")]]
+buttons = [
+    [
+        InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")
+    ],
+    [
+        InlineKeyboardButton(text="[『 Help 』]", callback_data="help_back"),
+        InlineKeyboardButton(text="❔ Chat and Req Anime?", url="https://t.me/tas_support")
+    ],
+    [
+        InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),
+        InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates")
+    ]
+]
 
 GROUP_START_IMG = "https://telegra.ph/file/2d9b9613c4c7f8310c6d1.mp4"
 EMI_IMG = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
@@ -818,7 +827,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 Hi,)['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m alive.",
+                "👋 Hi,)['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m awake again.",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
