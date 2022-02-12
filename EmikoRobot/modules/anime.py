@@ -371,7 +371,7 @@ def awake(update: Update, context: CallbackContext):
         parse_mode=ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(buttons)
     )
-    progress_message.delete()
+    #progress_message.delete()
 
 
 def user(update: Update, context: CallbackContext):
