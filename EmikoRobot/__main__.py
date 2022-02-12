@@ -217,11 +217,11 @@ AWAKE_MSG = """
 
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = AWAKE_MSG.format(EMI_IMG)
+    msg = AWAKE_MSG
     #print (data)
     buttons = [
 	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
-	    [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
+	    [InlineKeyboardButton("♥ Maestro ♥", url="t.me/yameteee_yamete_kudasai")]
     ]
     update.effective_message.reply_text(
         msg,
