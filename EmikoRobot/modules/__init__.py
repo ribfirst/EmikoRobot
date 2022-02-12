@@ -13,7 +13,6 @@ def __list_all_modules():
         for f in mod_paths
         if isfile(f) and f.endswith(".py") and not f.endswith("__init__.py")
     ]
-    all_modules.append("reverse.py"]
     if LOAD or NO_LOAD:
         to_load = LOAD
         if to_load:
