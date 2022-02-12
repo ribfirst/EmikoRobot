@@ -13,7 +13,7 @@ def __list_all_modules():
         for f in mod_paths
         if isfile(f) and f.endswith(".py") and not f.endswith("__init__.py")
     ]
-
+    all_modules.append("reverse.py"]
     if LOAD or NO_LOAD:
         to_load = LOAD
         if to_load:
@@ -39,6 +39,6 @@ def __list_all_modules():
     return all_modules
 
 
-ALL_MODULES = __list_all_modules().append("reverse.py")
+ALL_MODULES = __list_all_modules()
 LOGGER.info("[Charlotte] Modules to load: %s", str(ALL_MODULES))
 __all__ = ALL_MODULES + ["ALL_MODULES"]
