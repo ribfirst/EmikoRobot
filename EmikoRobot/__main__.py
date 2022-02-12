@@ -125,15 +125,16 @@ List of all the Modules:
     dispatcher.bot.first_name, "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.")
 buttons = [
     [
-        InlineKeyboardButton(text=f"Add Me To Your Group",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")
+        InlineKeyboardButton(text=f"『 Add Me To Your Group 』",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")
     ],
     [
-        InlineKeyboardButton(text="[『 Help 』]", callback_data="help_back"),
-        InlineKeyboardButton(text="❔ Chat and Req Anime?", url="https://t.me/tas_support")
+        InlineKeyboardButton(text="『 Help 』", callback_data="help_back"),
+        InlineKeyboardButton(text="❔ Chat & Reqest Anime?", url="https://t.me/tas_support")
     ],
     [
         InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),
-        InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates")
+        InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates"),
+        InlineKeyboardButton(text="🌟 Anime Channel",url="https://t.me/trending_anime_series")
     ]
 ]
 
