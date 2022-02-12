@@ -157,7 +157,7 @@ query ($id: Int,$search: String) {
 """
 
 AWAKE_MSG = """
-**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ[.]({}) **
+**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. **
 
 **✩✮ I'm working fine as up now 👌︎.**
 
@@ -167,7 +167,7 @@ AWAKE_MSG = """
 
 **✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**
 
-""".format("https://telegra.ph/file/a4f96c30605ece22664ea.jpg")
+"""
 
 url = 'https://graphql.anilist.co'
 
@@ -367,17 +367,22 @@ def manga(update: Update, context: CallbackContext):
 
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = AWAKE_MSG
-    #print (data)
+    img = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
+    msg = ""
+    msg += f"""{AWAKE_MSG}"""
+    support = "t.me/unmei_support"
+    owner = "t.me/yameteee_yamete_kudasai"
     buttons = [
-	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
-	    [InlineKeyboardButton("♥ Maestro ♥", url="t.me/yameteee_yamete_kudasai")]
+	[InlineKeyboardButton("⚡ Support ⚡", url=support)],
+	[InlineKeyboardButton("♥ Maestro ♥", url=owner)]
     ]
-    update.effective_message.reply_text(
-        msg,
+    update.effective_message.reply_photo(
+        photo=img,
+        caption=msg,
         parse_mode=ParseMode.MARKDOWN,
-        reply_markup=InlineKeyboardMarkup(buttons)
-    )
+        reply_markup=InlineKeyboardMarkup(buttons),
+        disable_web_page_preview=False)
+    progress_message.delete()
             
 def user(update: Update, context: CallbackContext):
     message = update.effective_message
