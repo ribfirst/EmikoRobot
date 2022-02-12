@@ -1,11 +1,4 @@
-import html
-import os
-import json
-import importlib
-import time
-import re
-import sys
-import traceback
+import json, os, html, time, re, sys, traceback, urllib, importlib
 import EmikoRobot.modules.sql.users_sql as sql
 from EmikoRobot.modules.helper_funcs.extraction import (
     extract_user,
@@ -225,7 +218,10 @@ AWAKE_MSG = """
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
     msg = AWAKE_MSG
-    image = EMI_IMG
+    url = EMI_IMG
+    response = urllib.request.urlopen(url)
+    image = json.loads(response.read())
+    #print (data)
     buttons = [
 	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
 	    [InlineKeyboardButton("♥ Maestro ♥",url="t.me/yameteee_yamete_kudasai")]
