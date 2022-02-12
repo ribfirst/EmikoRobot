@@ -198,36 +198,11 @@ def send_help(chat_id, text, keyboard=None):
 def test(update: Update, context: CallbackContext):
     # pprint(eval(str(update)))
     # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
-    update.effective_message.reply_text("This person edited a message")
+    update.effective_message.reply_text("Hola tester! I,m Up & running perfectly fine.")
     print(update.effective_message)
 
 
-AWAKE_MSG = """
-**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ[.]({}) **
 
-**✩✮ I'm working fine as up now 👌︎.**
-
-**✩✮ Unmei: Version 1.2**
-
-**✩✮ ᴀɴʏ ɪssᴜᴇs ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ @unmei_support **
-
-**✩✮ ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**
-
-"""
-
-def awake(update: Update, context: CallbackContext):
-    message = update.effective_message
-    msg = AWAKE_MSG
-    #print (data)
-    buttons = [
-	    [InlineKeyboardButton("⚡ Support ⚡", url="t.me/unmei_support")],
-	    [InlineKeyboardButton("♥ Maestro ♥", url="t.me/yameteee_yamete_kudasai")]
-    ]
-    update.effective_message.reply_text(
-        msg,
-        parse_mode=ParseMode.MARKDOWN,
-        reply_markup=InlineKeyboardMarkup(buttons)
-    )
 
 def start(update: Update, context: CallbackContext):
     args = context.args
@@ -854,10 +829,7 @@ def main():
             LOGGER.warning(e.message)
 
     test_handler = CommandHandler("test", test, run_async=True)
-    start_handler = CommandHandler("start", start, run_async=True)
-    #check_handler = CommandHandler("check", awake, run_async=True)
-    check_handler = CommandHandler("alive", awake, run_async=True)
-
+    start_handler = CommandHandler("start", start, run_async=True) 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
         help_button, pattern=r"help_.*", run_async=True
@@ -882,7 +854,7 @@ def main():
     )
 
     dispatcher.add_handler(test_handler)
-    dispatcher.add_handler(check_handler)
+    #dispatcher.add_handler(check_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
