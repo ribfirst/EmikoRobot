@@ -1,6 +1,7 @@
 __help__ = """
 *⚠️ Notice:*
-Commands listed here only work for users with special access are mainly used for troubleshooting, debugging purposes.
+Commands listed here only work for users with special
+access are mainly used for troubleshooting, debugging purposes.
 Group admins/group owners do not need these commands. 
  ╔ *List all special users:*
  ╠ ✧ `/musicarts`*:* Lists all Dragon disasters
@@ -32,11 +33,6 @@ Group admins/group owners do not need these commands.
  ╠  using the bot entirely
  ╠ ✧ `/notice`*:* Removes user from blacklist
  ╚ ✧ `/ignoredlist`*:* Lists ignored users
- ╔ *Speedtest:*
- ╚ ✧ `/speedtest`*:* Runs a speedtest and gives you 2 options to choose from, text or image output
- ╔ *Global Bans:*
- ╠ ✧ `/gban user reason`*:* Globally bans a user
- ╚ ✧ `/ungban user reason`*:* Unbans the user from the global bans list
  ╔ *Windows self hosted only:*
  ╠ ✧ `/reboot`*:* Restarts the bots service
  ╚ ✧ `/gitpull`*:* Pulls the repo and then restarts the bots service
