@@ -175,6 +175,22 @@ def listmodules(update: Update, context: CallbackContext):
     module_list = "Following modules are loaded : \n\n" + "".join(module_list)
     message.reply_text(module_list, parse_mode=ParseMode.HTML)
 
+__help__=f"""
+
+Below are the modules based commands,
+Only a specific level of disaster person can use them.
+
+ ╔ *Module loading:*
+ ╠ ✧ `/listmodules`*:* Lists names of all modules
+ ╠ ✧ `/load modulename`*:* Loads the said module to 
+ ╠   memory without restarting.
+ ╠ ✧ `/unload modulename`*:* Loads the said module from
+ ╚   memory without restarting.memory without restarting the bot.
+
+Reach out to @unmei_support for any queries.
+"""
+
+__mod_name__ = "Modules"
 
 LOAD_HANDLER = CommandHandler("load", load, run_async=True)
 UNLOAD_HANDLER = CommandHandler("unload", unload, run_async=True)
@@ -183,5 +199,3 @@ LISTMODULES_HANDLER = CommandHandler("listmodules", listmodules, run_async=True)
 dispatcher.add_handler(LOAD_HANDLER)
 dispatcher.add_handler(UNLOAD_HANDLER)
 dispatcher.add_handler(LISTMODULES_HANDLER)
-
-__mod_name__ = "Modules"
