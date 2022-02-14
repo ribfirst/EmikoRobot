@@ -362,8 +362,8 @@ def awake(update: Update, context: CallbackContext):
     support = "t.me/unmei_support"
     owner = "t.me/yameteee_yamete_kudasai"
     buttons = [
-	InlineKeyboardButton("『 ⚡ Support ⚡ 』", url=support),
-	InlineKeyboardButton("『 ♥ Maestro ♥ 』", url=owner)
+	[InlineKeyboardButton("『 ⚡ Support ⚡ 』", url=support)],
+	[InlineKeyboardButton("『 ♥ Maestro ♥ 』", url=owner)]
     ]
     update.effective_message.reply_photo(
 	IMAGE,
