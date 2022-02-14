@@ -642,15 +642,15 @@ __help__ = f"""
 Commands listed here only work for users with special access are mainly used for troubleshooting, debugging purposes.
 Group admins/group owners do not need these commands. 
  ╔ *List all special users:*
- ╠ ✧ `/dragons`*:* Lists all Dragon disasters
- ╠ ✧ `/demons`*:* Lists all Demon disasters
- ╠ ✧ `/tigers`*:* Lists all Tigers disasters
- ╠ ✧ `/wolves`*:* Lists all Wolf disasters
- ╠ ✧ `/heroes`*:* Lists all Hero Association members
- ╠ ✧ `/adddragon`*:* Adds a user to Dragon
- ╠ ✧ `/adddemon`*:* Adds a user to Demon
- ╠ ✧ `/addtiger`*:* Adds a user to Tiger
- ╠ ✧ `/addwolf`*:* Adds a user to Wolf
+ ╠ ✧ `/musicarts`*:* Lists all Dragon disasters
+ ╠ ✧ `/d2slayers`*:* Lists all Demon disasters
+ ╠ ✧ `/defenders`*:* Lists all Tigers disasters
+ ╠ ✧ `/mel_creators`*:* Lists all Wolf disasters
+ ╠ ✧ `/conductors`*:* Lists all Hero Association members
+ ╠ ✧ `/addmusicart`*:* Adds a user to Dragon
+ ╠ ✧ `/addd2slayer`*:* Adds a user to Demon
+ ╠ ✧ `/adddefender`*:* Adds a user to Tiger
+ ╠ ✧ `/addmelcr`*:* Adds a user to Wolf
  ╚ ✧ `Add dev doesnt exist, devs should know how to add themselves`
  ╔ *Ping:*
  ╠ ✧ `/ping`*:* gets ping time of bot to telegram server
