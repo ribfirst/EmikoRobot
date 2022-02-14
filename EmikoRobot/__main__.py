@@ -92,24 +92,8 @@ PM_START_TEXT = """
 ღღ    *Uptime:* `{}`    ღღ
 ➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
 
-♡ Try The Help Button below To Know My Abilities[.](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg) ♡
+♡ Try The Help Button below To Know My Abilities[.](https://telegra.ph/file/9473d3f0e989ee67bb4cd.jpg) ♡
 """
-
-buttons = [
-    [
-        InlineKeyboardButton(text="About Unmei Bot", callback_data="emiko_"),
-    ],
-    [
-        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
-        InlineKeyboardButton(
-            text="Try inline!​​", switch_inline_query_current_chat=""
-        ),
-    ],
-    [
-        InlineKeyboardButton(
-            text="➗ Add Unmei (Destiny) To Your Group ➗", url="t.me/Destiny_x_Bot?startgroup=new"),
-    ],
-]
 
 
 HELP_STRINGS = """
@@ -125,16 +109,16 @@ List of all the Modules:
     dispatcher.bot.first_name, "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.")
 buttons = [
     [
-        InlineKeyboardButton(text=f"『 Add Me To Your Group 』",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true")
+        InlineKeyboardButton(text=f"『 ➕ Add Me 』",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true"),
+        InlineKeyboardButton(text="『 🙇 Help 』", callback_data="help_back")
     ],
     [
-        InlineKeyboardButton(text="『 Help 』", callback_data="help_back"),
-        InlineKeyboardButton(text="❔ Chat & Reqest Anime?", url="https://t.me/tas_support")
+        InlineKeyboardButton(text="『 🌟 Anime Channel 』",url="https://t.me/trending_anime_series"),
+        InlineKeyboardButton(text="『 ❔ Otaku Talks 』", url="https://t.me/tas_support")
     ],
     [
-        InlineKeyboardButton(text="🚑 Support",url=f"https://telegram.dog/unmei_support"),
-        InlineKeyboardButton(text="📢 Updates",url="https://t.me/unmei_updates"),
-        InlineKeyboardButton(text="🌟 Anime Channel",url="https://t.me/trending_anime_series")
+        InlineKeyboardButton(text="『 🚑 Support 』",url=f"https://telegram.dog/unmei_support"),
+        InlineKeyboardButton(text="『 📢 Updates 』",url="https://t.me/unmei_updates")
     ]
 ]
 
@@ -229,7 +213,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="[『 Back 』]", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="[『 ⫷ Back 』]", callback_data="help_back")]]
                     ),
                 )
 
@@ -345,7 +329,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="『 ⫷ Go Back 』", callback_data="help_back")]]
                 ),
             )
 
@@ -465,7 +449,7 @@ def emiko_about_callback(update, context):
         )
     elif query.data == "emiko_support":
         query.message.edit_text(
-            text="*๏ Unmei support chats*"
+            text="**๏ Unmei Support Chats**"
             "\nJoin My Support Group/Channel for see or report a problem on Unmei.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
