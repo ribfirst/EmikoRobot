@@ -589,6 +589,14 @@ __help__ = """
 ❂ /zombies*:* searches deleted accounts
 ❂ /zombies clean*:* removes deleted accounts from the group.
 ❂ /snipe <chatid> <string>*:* Make me send a message to a specific chat.
+
+*Remote commands:*
+❂ `/rban user group`*:* Remote ban
+❂ `/runban user group`*:* Remote un-ban
+❂ `/rpunch user group`*:* Remote punch
+❂ `/rmute user group`*:* Remote mute
+❂ `/runmute user group`*:* Remote un-mute
+
 """
 
 
