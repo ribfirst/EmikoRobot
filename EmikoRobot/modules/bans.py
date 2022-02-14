@@ -530,7 +530,7 @@ def banme(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
     if is_user_admin(update.effective_chat, user_id):
-        update.effective_message.reply_text("⚠️ I cannot banned admin.")
+        update.effective_message.reply_text("⚠️ I cannot ban admin.")
         return
 
     res = update.effective_chat.ban_member(user_id)
