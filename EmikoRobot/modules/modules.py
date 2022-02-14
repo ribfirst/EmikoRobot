@@ -175,7 +175,7 @@ def listmodules(update: Update, context: CallbackContext):
     module_list = "Following modules are loaded : \n\n" + "".join(module_list)
     message.reply_text(module_list, parse_mode=ParseMode.HTML)
 
-__help__=f"""
+__help__="""
 
 Below are the modules based commands,
 Only a specific level of disaster person can use them.
