@@ -79,7 +79,6 @@ gpytranslate
 fontTools
 opencv-python-headless
 odmantic
-sqlite3
 tzlocal
 pendulum
 fuzzysearch
