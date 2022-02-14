@@ -9,7 +9,7 @@ from EmikoRobot import OWNER_ID, DEV_USERS
 from EmikoRobot import TEMP_DOWNLOAD_DIRECTORY as path
 from EmikoRobot import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './EmikoRobot/resources/emiko.png'
+water = './EmikoRobot/resources/cosette.destiny-20220205-0024.jpg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
