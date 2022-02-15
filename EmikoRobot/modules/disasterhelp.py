@@ -1,4 +1,5 @@
-__help__ = """
+#__help__ = 
+"""
 *⚠️ Notice:*
 Commands listed here only work for users with special
 access are mainly used for troubleshooting, debugging purposes.
@@ -45,4 +46,4 @@ Group admins/group owners do not need these commands.
 Visit @unmei_support for more information.
 """
 
-__mod_name__ = "Disaster"
+#__mod_name__ = "Disaster"
