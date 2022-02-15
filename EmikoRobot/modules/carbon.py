@@ -26,7 +26,7 @@ async def carbon_func(_, message):
 
 MEMEK = "https://telegra.ph/file/060ea554c591fc5b0b878.jpg"
 
-@support_plus
+#@support_plus
 @pbot.on_message(filters.command("repo"))
 async def repo(_, message):
     await message.reply_photo(
