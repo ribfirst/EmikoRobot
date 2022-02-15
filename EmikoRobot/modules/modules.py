@@ -190,7 +190,7 @@ Only a specific level of disaster person can use them.
 Reach out to @unmei_support for any queries.
 """
 
-__mod_name__ = "Modules"
+#__mod_name__ = "Modules"
 
 LOAD_HANDLER = CommandHandler("load", load, run_async=True)
 UNLOAD_HANDLER = CommandHandler("unload", unload, run_async=True)
