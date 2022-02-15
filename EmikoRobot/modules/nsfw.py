@@ -13,7 +13,7 @@ from telegram.ext import CommandHandler, run_async, CallbackContext
 from EmikoRobot.modules.helper_funcs.filters import CustomFilters
 from EmikoRobot.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
-import botogram
+
 
 @user_admin
 @gloggable
