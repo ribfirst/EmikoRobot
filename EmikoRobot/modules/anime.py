@@ -1,6 +1,10 @@
 import datetime
 import html
 import textwrap
+from platform import python_version as py_ver
+from telegram import __version__ as tg_ver
+from pyrogram import __version__ as pyro_ver
+from telethon import __version__ as teleth_ver
 
 import bs4
 import jikanpy
@@ -156,7 +160,19 @@ query ($id: Int,$search: String) {
     }
 """
 
-AWAKE_MSG = "**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. **\n\n**✩✮ I'm working fine as up now 👌︎.**\n\n**✩✮ Unmei: Version 1.2**\n\n**✩✮ 💞 ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**"
+AWAKE_MSG = f"""**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. **
+
+**Python Version :** `{py_ver()}`
+
+**Library Version :** `{tg_ver}`
+
+**Telethon Version :** `{teleth_ver}`
+
+**Pyrogram Version :** `{pyro_ver}`
+
+✩✮ 💞 ᴛʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ 💞**
+
+"""
 
 url = 'https://graphql.anilist.co'
 
@@ -362,8 +378,10 @@ def awake(update: Update, context: CallbackContext):
     support = "t.me/unmei_support"
     owner = "t.me/yameteee_yamete_kudasai"
     buttons = [
-	[InlineKeyboardButton("『 ⚡ Support ⚡ 』", url=support)],
-	[InlineKeyboardButton("『 ♥ Maestro ♥ 』", url=owner)]
+	[
+            InlineKeyboardButton("『 ⚡ Support ⚡ 』", url=support),
+	    InlineKeyboardButton("『 ♥ Maestro ♥ 』", url=owner)
+        ]
     ]
     update.effective_message.reply_photo(
 	IMAGE,
