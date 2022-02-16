@@ -478,11 +478,21 @@ def user(update: Update, context: CallbackContext):
 def request(update: Update, context: CallbackContext):
     message = update.effective_message
     args = context.args
+    log_message = ""
     chat = update.effective_chat
     user_id, anime = extract_user_and_text(message, args)
+    if not user_id:
+        message.reply_text("⚠️ User not found.")
+        return log_message
     ANIME_NAME = message.text.split(' ', 1)
     user = update.effective_user
-    member = chat.get_member(user_id)
+    try:
+        member = chat.get_member(user_id)
+    except BadRequest as excp:
+        if excp.message != "User not found":
+            raise
+        message.reply_text("Can't seem to find this person.")
+    
     bot = context.bot
     try:
         chat_id = REQUEST_CHAT_ID
