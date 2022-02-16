@@ -477,31 +477,20 @@ def user(update: Update, context: CallbackContext):
 
 def request(update: Update, context: CallbackContext):
     message = update.effective_message
-    args = context.args
-    log_message = ""
-    chat = update.effective_chat
-    user_id, anime = extract_user_and_text(message, args)
-    if not user_id:
-        message.reply_text("⚠️ User not found.")
-        return log_message
+    #args = context.args
+    #log_message = ""
+    #chat = update.effective_chat
     ANIME_NAME = message.text.split(' ', 1)
-    user = update.effective_user
-    try:
-        member = chat.get_member(user_id)
-    except BadRequest as excp:
-        if excp.message != "User not found":
-            raise
-        message.reply_text("Can't seem to find this person.")
-    
+    #user = update.effective_user
     bot = context.bot
     try:
         chat_id = REQUEST_CHAT_ID
     except TypeError:
         update.effective_message.reply_text("Bruh, this will work like `/request <anime name>`, don't comedy me..")
     to_send = " ".join(ANIME_NAME)
-    req_by = f"<b>Requested By:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+    #req_by = f"<b>Requested By:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     to_send = to_send.replace("/","#")
-    to_send = to_send + "\n"+str(req_by)
+    #to_send = to_send + "\n"+str(req_by)
     if len(to_send.split(" ")) >= 2:
         try:
             update.effective_message.reply_text("Request Submitted.")
