@@ -5,7 +5,7 @@ from platform import python_version as py_ver
 from telegram import __version__ as tg_ver
 from pyrogram import __version__ as pyro_ver
 from telethon import __version__ as teleth_ver
-
+from telegram import TelegramError
 import bs4
 import jikanpy
 import requests
