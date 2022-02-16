@@ -146,7 +146,7 @@ else:
         raise Exception("Your OWNER_ID variable is not a valid integer.")
 
     JOIN_LOGGER = Config.JOIN_LOGGER
-    REQUEST_CHAT_ID = Config.JOIN_LOGGER
+    REQUEST_CHAT_ID = "-1001579527651"
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
