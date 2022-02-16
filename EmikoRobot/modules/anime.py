@@ -484,7 +484,7 @@ def request(update: Update, context: CallbackContext):
     to_send = " ".join(ANIME_NAME)
     if len(to_send) >= 1:
         try:
-            update.effective_message.repy_text("Request Submitted.")
+            update.effective_message.reply_text("Request Submitted.")
             bot.sendMessage(int(chat_id), str(to_send))
         except TelegramError:
             LOGGER.warning("Couldn't send to group %s", str(chat_id))
