@@ -482,6 +482,7 @@ def request(update: Update, context: CallbackContext):
     except TypeError:
         update.effective_message.reply_text("Bruh, this will work like `/request <anime name>`, don't comedy me..")
     to_send = " ".join(ANIME_NAME)
+    to_send = to_send.replace("/","#")
     if len(to_send) >= 1:
         try:
             update.effective_message.reply_text("Request Submitted.")
