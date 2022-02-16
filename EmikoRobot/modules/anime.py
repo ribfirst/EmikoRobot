@@ -483,7 +483,7 @@ def request(update: Update, context: CallbackContext):
         update.effective_message.reply_text("Bruh, this will work like `/request <anime name>`, don't comedy me..")
     to_send = " ".join(ANIME_NAME)
     to_send = to_send.replace("/","#")
-    if len(to_send) >= 1:
+    if len(to_send.split(" ")) >= 2:
         try:
             update.effective_message.reply_text("Request Submitted.")
             bot.sendMessage(int(chat_id), str(to_send))
@@ -492,6 +492,8 @@ def request(update: Update, context: CallbackContext):
             update.effective_message.reply_text(
                 "Couldn't send the message. Perhaps I'm not part of the request group?"
             )
+    else:
+        update.effective_message.reply_text("Format is incorrect, use `/request <anime_name>` to request an anime.")
 
 def upcoming(update: Update, context: CallbackContext):
     jikan = jikanpy.jikan.Jikan()
