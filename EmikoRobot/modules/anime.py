@@ -9,6 +9,8 @@ from telegram import TelegramError
 import bs4
 import jikanpy
 import requests
+from EmikoRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from EmikoRobot.modules.helper_funcs.string_handling import extract_time
 from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher, REQUEST_CHAT_ID
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
@@ -475,14 +477,19 @@ def user(update: Update, context: CallbackContext):
 
 def request(update: Update, context: CallbackContext):
     message = update.effective_message
+    user_id, anime = extract_user_and_text(message, args)
     ANIME_NAME = message.text.split(' ', 1)
+    user = update.effective_user
+    member = chat.get_member(user_id)
     bot = context.bot
     try:
         chat_id = REQUEST_CHAT_ID
     except TypeError:
         update.effective_message.reply_text("Bruh, this will work like `/request <anime name>`, don't comedy me..")
     to_send = " ".join(ANIME_NAME)
+    req_by = f"<b>Requested By:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     to_send = to_send.replace("/","#")
+    to_send = to_send + "\n"+str(req_by)
     if len(to_send.split(" ")) >= 2:
         try:
             update.effective_message.reply_text("Request Submitted.")
