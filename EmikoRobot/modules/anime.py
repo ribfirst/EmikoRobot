@@ -9,7 +9,7 @@ from telethon import __version__ as teleth_ver
 import bs4
 import jikanpy
 import requests
-from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher
+from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher, GROUP_CHAT_ID
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update, Message)
@@ -473,6 +473,23 @@ def user(update: Update, context: CallbackContext):
         disable_web_page_preview=False)
     progress_message.delete()
 
+def request(update: Update, context: CallbackContext):
+    message = update effective_message
+    ANIME_NAME = message.text.split(' ', 1)
+    bot = context.bot
+    try:
+        chat_id = REQUEST_CHAT_ID
+    except TypeError:
+        update.effective_message.reply_text("Bruh, this will work like `/request <anime name>`, don't comedy me..")
+    to_send = " ".join(ANIME_NAME)
+    if len(to_send) >= 1:
+        try:
+            bot.sendMessage(int(chat_id), str(to_send))
+        except TelegramError:
+            LOGGER.warning("Couldn't send to group %s", str(chat_id))
+            update.effective_message.reply_text(
+                "Couldn't send the message. Perhaps I'm not part of the request group?"
+            )
 
 def upcoming(update: Update, context: CallbackContext):
     jikan = jikanpy.jikan.Jikan()
@@ -609,6 +626,7 @@ __help__ = """
 ❂ /quote: send quotes randomly as text
  """
 
+REQUEST_HANDLER = DisableAbleCommandHandler("request", request, run_async=True)
 check_handler = DisableAbleCommandHandler("alive", awake, run_async=True)
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, run_async=True)
 AIRING_HANDLER = DisableAbleCommandHandler("airing", airing, run_async=True)
@@ -620,6 +638,7 @@ KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku, run_async
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo, run_async=True)
 BUTTON_HANDLER = CallbackQueryHandler(button, pattern='anime_.*')
 
+dispatcher.add_handler(REQUEST_HANDLER)
 dispatcher.add_handler(check_handler)
 dispatcher.add_handler(BUTTON_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)
@@ -634,10 +653,10 @@ dispatcher.add_handler(UPCOMING_HANDLER)
 __mod_name__ = "Anime"
 __command_list__ = [
     "anime", "manga", "character", "user", "upcoming", "kaizoku", "airing",
-    "kayo", "alive"
+    "kayo", "alive", "request"
 ]
 __handlers__ = [
     ANIME_HANDLER, CHARACTER_HANDLER, MANGA_HANDLER, USER_HANDLER,
     UPCOMING_HANDLER, KAIZOKU_SEARCH_HANDLER, KAYO_SEARCH_HANDLER,
-    BUTTON_HANDLER, AIRING_HANDLER
+    BUTTON_HANDLER, AIRING_HANDLER, REQUEST_HANDLER
 ]
