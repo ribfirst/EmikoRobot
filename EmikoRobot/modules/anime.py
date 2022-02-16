@@ -478,6 +478,7 @@ def user(update: Update, context: CallbackContext):
 def request(update: Update, context: CallbackContext):
     message = update.effective_message
     args = context.args
+    chat = update.effective_chat
     user_id, anime = extract_user_and_text(message, args)
     ANIME_NAME = message.text.split(' ', 1)
     user = update.effective_user
