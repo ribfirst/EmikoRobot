@@ -9,7 +9,7 @@ from telethon import __version__ as teleth_ver
 import bs4
 import jikanpy
 import requests
-from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher, GROUP_CHAT_ID
+from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher, REQUEST_CHAT_ID
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update, Message)
