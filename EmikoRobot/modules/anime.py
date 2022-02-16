@@ -474,7 +474,7 @@ def user(update: Update, context: CallbackContext):
     progress_message.delete()
 
 def request(update: Update, context: CallbackContext):
-    message = update effective_message
+    message = update.effective_message
     ANIME_NAME = message.text.split(' ', 1)
     bot = context.bot
     try:
@@ -484,6 +484,7 @@ def request(update: Update, context: CallbackContext):
     to_send = " ".join(ANIME_NAME)
     if len(to_send) >= 1:
         try:
+            update.effective_message.repy_text("Request Submitted for"+str(ANIME_NAME)+".")
             bot.sendMessage(int(chat_id), str(to_send))
         except TelegramError:
             LOGGER.warning("Couldn't send to group %s", str(chat_id))
