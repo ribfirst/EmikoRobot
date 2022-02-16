@@ -636,6 +636,11 @@ __help__ = """
  「 Anime Quotes 」
 ❂ /animequotes: for anime quotes randomly as photos.
 ❂ /quote: send quotes randomly as text
+
+──「 Anime search 」──
+❂ /request <anime>: Triggers a request for anime to our channel.
+Anime will be posted on @trending_anime_series then the request is marked as completed.
+
  """
 
 REQUEST_HANDLER = DisableAbleCommandHandler("request", request, run_async=True)
