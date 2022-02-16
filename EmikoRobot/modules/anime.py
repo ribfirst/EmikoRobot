@@ -639,7 +639,7 @@ __help__ = """
 
 ──「 Anime search 」──
 ❂ /request <anime>: Triggers a request for anime to our channel.
-Anime will be posted on @trending_anime_series then the request is marked as completed.
+Anime will be posted on [The Channel](https://t.me/trending_anime_series) then the request is marked as completed.
 
  """
 
