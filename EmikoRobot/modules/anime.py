@@ -9,6 +9,7 @@ from telegram import TelegramError
 import bs4
 import jikanpy
 import requests
+from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 from EmikoRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
 from EmikoRobot.modules.helper_funcs.string_handling import extract_time
 from EmikoRobot import DEV_USERS, OWNER_ID, DRAGONS, dispatcher, REQUEST_CHAT_ID
