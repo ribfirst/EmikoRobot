@@ -479,9 +479,9 @@ def request(update: Update, context: CallbackContext):
     message = update.effective_message
     #args = context.args
     #log_message = ""
-    #chat = update.effective_chat
+    chat = update.effective_chat
     ANIME_NAME = message.text.split(' ', 1)
-    #user = update.effective_user
+    user = update.effective_user
     bot = context.bot
     try:
         chat_id = REQUEST_CHAT_ID
@@ -491,9 +491,10 @@ def request(update: Update, context: CallbackContext):
     #req_by = f"<b>Requested By:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     to_send = to_send.replace("/","#")
     to_send = to_send.replace("@Destiny_x_Bot","")
-    #to_send = to_send + "\n"+str(req_by)
+
     if len(to_send.split(" ")) >= 2:
         try:
+            to_send = f"{to_send}\n Requested By : {mention_html(user.id, html.escape(user.first_name))}\n From Chat: <b>{html.escape(chat.title)}:</b>\n"
             update.effective_message.reply_text("Request Submitted.")
             bot.sendMessage(int(chat_id), str(to_send))
         except TelegramError:
@@ -502,6 +503,7 @@ def request(update: Update, context: CallbackContext):
                 "Couldn't send the message. Perhaps I'm not part of the request group?"
             )
     else:
+        #to_send = f"{to_send}\n Requested By : {mention_html(user.id, html.escape(user.first_name))}\n From Chat: <b>{html.escape(chat.title)}:</b>\n"
         update.effective_message.reply_text("Format is incorrect, use `/request <anime_name>` to request an anime.")
 
 def upcoming(update: Update, context: CallbackContext):
