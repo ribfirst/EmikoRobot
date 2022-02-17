@@ -495,7 +495,7 @@ def request(update: Update, context: CallbackContext):
 
     if len(to_send.split(" ")) >= 2:
         try:
-            to_send = f"{to_send}\n Requested By : @{user.username} | ID : {user.id}\n From Chat: {chat.title} | @{chat.username} | {chat.id}\n"
+            to_send = f"{to_send}\nRequester: @{user.username}\nRequester ID: `{user.id}`\n\nFrom Chat: {chat.title}\nChat Username: @{chat.username}\n Chat ID: `{chat.id}`\n"
             update.effective_message.reply_text("Request Submitted.")
             bot.sendMessage(int(chat_id), str(to_send))
         except TelegramError:
