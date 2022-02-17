@@ -813,7 +813,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 Moshi Mosh Minna\n, I['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m awake again.",
+                "👋 Moshi Mosh Minna,\nI['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m awake again.",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
