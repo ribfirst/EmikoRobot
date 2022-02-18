@@ -150,7 +150,7 @@ async def nsfw_enable_disable(_, message):
     status = status.lower()
     chat_id = message.chat.id
     if status == "on" or status == "yes":
-        nsfw_on(chat_id)
+        await nsfw_on(chat_id)
         await message.reply_text(
             "Enabled AntiNSFW System. I will Delete inappropraite media from Horny people."
         )
