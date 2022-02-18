@@ -316,17 +316,17 @@ async def is_nsfw_on(chat_id: int) -> bool:
     return False
 
 async def nsfw_on(chat_id: int):
-    is_nsfw = is_nsfw_on(chat_id)
+    is_nsfw = await is_nsfw_on(chat_id)
     if is_nsfw:
         return
-    return await nsfwdb.delete_one({"chat_id": chat_id})
+    return nsfwdb.delete_one({"chat_id": chat_id})
 
 
 async def nsfw_off(chat_id: int):
-    is_nsfw = is_nsfw_on(chat_id)
+    is_nsfw = await is_nsfw_on(chat_id)
     if not is_nsfw:
         return
-    return await nsfwdb.insert_one({"chat_id": chat_id})
+    return nsfwdb.insert_one({"chat_id": chat_id})
 
 
 async def is_served_chat(chat_id: int) -> bool:
