@@ -151,11 +151,13 @@ async def nsfw_enable_disable(_, message):
     chat_id = message.chat.id
     if status == "on" or status == "yes":
         await nsfw_on(chat_id)
+        await asyncio.sleep(1)
         await message.reply_text(
             "Enabled AntiNSFW System. I will Delete inappropraite media from Horny people."
         )
     elif status == "off" or status == "no":
         await nsfw_off(chat_id)
+        await asyncio.sleep(1)
         await message.reply_text("Disabled AntiNSFW System. Yeah, enjoy your fap now.")
     else:
         await message.reply_text("Unknown Suffix, Use /antinsfw [on/off]")
