@@ -62,7 +62,7 @@ if ENV:
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
     REQUEST_CHAT_ID = os.environ.get("REQUEST_CHAT_ID", None)
-
+    SUPPORT_CHAT_ID = os.environ.get("SUPPORT_CHAT_ID", None)
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
@@ -88,6 +88,7 @@ if ENV:
     BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     REQUEST_CHAT_ID = os.environ.get("REQUEST_CHAT_ID", None)
+    SUPPORT_CHAT_ID = os.environ.get("SUPPORT_CHAT_ID", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     URL = os.environ.get("URL", "")  # Does not contain token
     PORT = int(os.environ.get("PORT", 5000))
@@ -146,7 +147,7 @@ else:
         raise Exception("Your OWNER_ID variable is not a valid integer.")
 
     JOIN_LOGGER = Config.JOIN_LOGGER
-    REQUEST_CHAT_ID = "-1001579527651"
+    #REQUEST_CHAT_ID = "-1001579527651"
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
