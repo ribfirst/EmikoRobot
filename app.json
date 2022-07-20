@@ -1,5 +1,5 @@
 {
-      "name": "Unmei (Destiny) Bot",
+      "name": "OsmaniChatbot",
       "description": "A Powerful  Telegram group management bot with anime theme 'Takt OP.Destiny'.",
       "keywords": [
          "telegram",
@@ -10,7 +10,7 @@
       ],
     
    "logo":    "https://telegra.ph/file/3aacd6c0cfe8c852e43c0.jpg",  
-   "repository": "https://github.com/DarkSoulxUltra/EmikoRobot",
+   "repository": "https://github.com/ribfirst/EmikoRobot",
    "addons": [
           {
          "options": {
@@ -31,32 +31,32 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": ""
+         "value": "5462008662:AAGyuXnMg3y-UQDIuPIdRDi9xw2qYeu-UXY"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "15499461"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "ff93948d3b7c3091e8d573275a4ed80f"
       },    
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "866830519"
+         "value": "1008271006"
      },
 
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
          "required": true,
-         "value": "" 
+         "value": "1BJWap1wBu7XDUJMbP5mnCx4DsmGJtxbxWV9Q2Bgo3CU5J5lTeck1-hSvzBsDJSkvHODFLQjcZJJmOsM9B1-0z8J-RdTIhMKJ5Lf7W4NwRdxHMRXjL122xuh9zhVz_BEdY9tg1yvWVv67MkD2MF_NiSCpgWv3jUDJf5mKR5vGf1REGv5fDAqcwPXe9e0-zDsn1KLGOcX448n2sRvmfv3RDuoS8btCV2wy5JeihBlB9am9wmpsuFOTP37AFPQ-CPtNQqKOs-y3zsj81SajuXrsqNdVKPsbM8dNyFnhyjUTY-ck1uNJMqQLrrZajkMtoRvFK97SygRwPQ4-zIAV6ElhK892LLZqlbI=" 
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
-        "value": ""
+        "value": "3fe7654f-3feb-415b-8e2f-75f877c1117c"
       },
       "HEROKU_APP_NAME": {
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
@@ -64,12 +64,12 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": "Destiny_x_Bot"
+         "value": "Ribaj_bot"
       },
 
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
-         "value": ""
+         "value": "5462008662"
       },
 
       "OWNER_USERNAME": {
@@ -79,12 +79,12 @@
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "unmei_support"
+         "value": "osmanigroupbot"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
          "required": true,
-         "value": ""
+         "value": "mongodb+srv://Mosia_Mk_Bot:mosia@cluster0.91lut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
       },
       "IBM_WATSON_CRED_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
@@ -97,12 +97,12 @@
      "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "-1001665772310"
+         "value": "-1001150107625"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-1001667046380"
+         "value": "-1001150107625"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
