@@ -109,8 +109,7 @@ List of all the Modules:
     dispatcher.bot.first_name, "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.")
 buttons = [
     [
-        InlineKeyboardButton(
-            text=f"➕ Add Me To Your Group ➕",url=f"t.me/{bu}?startgroup=new"),
+        InlineKeyboardButton(text=f"『 ➕ Add Me To Your Group ➕ 』",url=f"https://t.me/Ribaj_Bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="『 🌟 Anime Channel 』",url="https://t.me/meribaj"),
