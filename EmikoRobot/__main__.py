@@ -86,19 +86,19 @@ first_name_pm = ""
 PM_START_TEXT = """
 ────「 {} 」────
 *Hey there {}!,*
-* I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
+* I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. ╚»𝐎𝐬𝐦𝐚𝐧𝐢«╝. *
 
 ➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
 ღღ    *Uptime:* `{}`    ღღ
 ➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
 
-♡ Try The Help Button below To Know My Abilities[.](https://telegra.ph/file/9473d3f0e989ee67bb4cd.jpg) ♡
+♡ Try The Help Button below To Know My Abilities[.](https://telegra.ph/file/9affea74c9eed1b4a1963.jpg) ♡
 """
 
 
 HELP_STRINGS = """
-Hello there, I'm Unmei Bot! Some people do call me Destiny.
-To make me functional, make sure that i have enough rights in your group[.](https://telegra.ph/file/26c430892d2ce0e407443.jpg)
+Hello there, I'm ╚»𝐎𝐬𝐦𝐚𝐧𝐢«╝ Bot! Some people do call me ╚»𝐎𝐬𝐦𝐚𝐧𝐢«╝.
+To make me functional, make sure that i have enough rights in your group[.](https://telegra.ph/file/09d6c7cc130bec60767f2.jpg)
 Helpful commands:
 
 - /start: It will starts me! You've probably used this, as you are here now.
@@ -109,24 +109,24 @@ List of all the Modules:
     dispatcher.bot.first_name, "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.")
 buttons = [
     [
-        InlineKeyboardButton(text=f"『 ➕ Add Me 』",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true"),
-        InlineKeyboardButton(text="『 🙇 Help 』", callback_data="help_back")
+        InlineKeyboardButton(
+            text=f"➕ Add Me To Your Group ➕",url=f"t.me/{bu}?startgroup=new"),
     ],
     [
-        InlineKeyboardButton(text="『 🌟 Anime Channel 』",url="https://t.me/trending_anime_series"),
-        InlineKeyboardButton(text="『 ❔ Otaku Talks 』", url="https://t.me/tas_support")
+        InlineKeyboardButton(text="『 🌟 Anime Channel 』",url="https://t.me/meribaj"),
+        InlineKeyboardButton(text="『 ❔ Osmani Love Store 』", url="https://t.me/tas_support")
     ],
     [
-        InlineKeyboardButton(text="『 🚑 Support 』",url=f"https://telegram.dog/unmei_support"),
-        InlineKeyboardButton(text="『 📢 Updates 』",url="https://t.me/unmei_updates")
+        InlineKeyboardButton(text="『 🚑 Support 』",url=f"https://telegram.dog/osmanigroupbot"),
+        InlineKeyboardButton(text="『 📢 Updates 』",url="https://t.me/teamosmani")
     ]
 ]
 
-GROUP_START_IMG = "https://telegra.ph/file/2d9b9613c4c7f8310c6d1.mp4"
-EMI_IMG = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
+GROUP_START_IMG = "https://telegra.ph/file/e21ffbbf2e5c52647c517.mp4"
+EMI_IMG = "https://telegra.ph/file/9affea74c9eed1b4a1963.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @yameteee_yamete_kudasai \
+ You can support the project by contacting @salmanhelp \
  Supporting isn't always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -374,15 +374,15 @@ def emiko_about_callback(update, context):
     query = update.callback_query
     if query.data == "emiko_":
         query.message.edit_text(
-            text="๏ I'm *Unmei (Destiny)*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *Osmani*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_Unmei's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for Unmei Bot.",
+            "\n\n_Osmani's licensed under the GNU General Public License v3.0_"
+            "\n\n Click on button bellow to get basic help for OsmanRobot.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -396,7 +396,7 @@ def emiko_about_callback(update, context):
                     InlineKeyboardButton(text="Credits", callback_data="emiko_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/DarkSoulxUltra/EmikoRobot"),
+                    InlineKeyboardButton(text="Love Store", url="https://t.me/osmanilovestore"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="emiko_back"),
@@ -423,7 +423,7 @@ def emiko_about_callback(update, context):
     elif query.data == "emiko_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, Unmei (Destiny) is now ready to manage your group."
+            "\nCongragulations, Osmani is now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -450,14 +450,14 @@ def emiko_about_callback(update, context):
         )
     elif query.data == "emiko_support":
         query.message.edit_text(
-            text="**๏ Unmei Support Chats**"
-            "\nJoin My Support Group/Channel for see or report a problem on Unmei.",
+            text="**๏ Osmani Support Chats**"
+            "\nJoin My Support Group/Channel for see or report a problem on Osmani.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/unmei_support"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/unmei_updates"),
+                    InlineKeyboardButton(text="Support", url="t.me/osmanigroupbot"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/teamosmani"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="emiko_"),
@@ -470,30 +470,18 @@ def emiko_about_callback(update, context):
 
     elif query.data == "emiko_credit":
         query.message.edit_text(
-            text=f"๏ Credis for Unmei\n"
+            text=f"๏ Credis for Osmani\n"
             "\nHere Developers Making And Give Inspiration For making the repo",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="sena-ex", url="https://github.com/kennedy-ex"),
-                    InlineKeyboardButton(text="TheHamkerCat", url="https://github.com/TheHamkerCat"),
+                    InlineKeyboardButton(text="Osmani Bots", url="https://github.com/Ribaj"),
+                    InlineKeyboardButton(text="Osmani Pro", url="https://github.com/Osmanipro"),
                  ],
                  [
-                    InlineKeyboardButton(text="Feri", url="https://github.com/FeriEXP"),
-                    InlineKeyboardButton(text="riz-ex", url="https://github.com/riz-ex"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Anime Kaizoku", url="https://github.com/animekaizoku"),
-                    InlineKeyboardButton(text="TheGhost Hunter", url="https://github.com/HuntingBots"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Inuka Asith", url="https://github.com/inukaasith"),
-                    InlineKeyboardButton(text="Noob-Kittu", url="https://github.com/noob-kittu"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Queen Arzoo", url="https://github.com/QueenArzoo"),
-                    InlineKeyboardButton(text="Paul Larsen", url="https://github.com/PaulSonOfLars"),
+                    InlineKeyboardButton(text="Global Ribaj", url="https://t.me/meribaj"),
+                    InlineKeyboardButton(text="Osmani Store", url="https://t.me/osmanilovestore"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="emiko_"),
@@ -813,7 +801,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 Moshi Mosh Minna,\nI['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m awake again.",
+                "👋 ╚»𝐎𝐬𝐦𝐚𝐧𝐢 𝐂𝐡𝐚𝐭𝐛𝐨𝐭«╝,\nI['](https://telegra.ph/file/ecbd537fcd759e9d651db.mp4)m awake again.",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
